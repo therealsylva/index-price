@@ -1,0 +1,10 @@
+{
+  "name": "@blackbook/index-price",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -p 'test_*.py' && python3 tools/state_io.py verify && node tools/verify.mjs",
+    "update": "python3 tools/update.py",
+    "verify": "python3 tools/state_io.py verify && node tools/verify.mjs"
+  }
+}

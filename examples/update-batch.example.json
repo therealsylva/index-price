@@ -1,0 +1,10 @@
+{
+  "schema": "blackbook.index.update-batch.v1",
+  "from": "2026-08-26T00:00:00.000000Z",
+  "asOf": "2026-08-27T00:00:00.000000Z",
+  "provider": "fotmob",
+  "expectedMatchIds": [
+    "fotmob:1234567",
+    "fotmob:1234568"
+  ]
+}

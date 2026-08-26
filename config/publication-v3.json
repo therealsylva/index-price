@@ -1,0 +1,15 @@
+{
+  "schema": "blackbook.index.publication-band-policy.v1",
+  "version": "blackbook-football-band-v3",
+  "horizonHours": 72,
+  "densityFloorPpm": 50000,
+  "marketDiscoveryReservePpm": 35000,
+  "densityReservePpm": 15000,
+  "basicProfileReservePpm": 25000,
+  "maximumBaseReservePpm": 120000,
+  "maximumDirectionalSkewPpm": 750000,
+  "signalScalePpm": {
+    "CLUB": 40000,
+    "PLAYER": 15000
+  }
+}
