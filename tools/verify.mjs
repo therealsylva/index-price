@@ -3,7 +3,16 @@ import { readFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const defaultRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const args = process.argv.slice(2);
+if (args.includes("--help")) {
+  console.log("usage: node tools/verify.mjs [--root PATH]");
+  process.exit(0);
+}
+if (args.length !== 0 && (args.length !== 2 || args[0] !== "--root")) {
+  throw new Error("usage: node tools/verify.mjs [--root PATH]");
+}
+const root = args.length === 2 ? resolve(args[1]) : defaultRoot;
 const HEX_256 = /^[0-9a-f]{64}$/;
 const ENTITY_ID = /^[A-Za-z0-9][A-Za-z0-9:._-]{0,127}$/;
 const SHARD_NAME = /^(?:snapshot|movements)-[0-9]{3}\.json$/;
