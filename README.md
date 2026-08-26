@@ -16,6 +16,10 @@ This repository contains the canonical output needed by price consumers: entity 
 
 The 72-hour band horizon is rolling operational metadata, not a price expiry. `R` remains the canonical reference until a later verified publication replaces it.
 
+## Consume
+
+Start with [`football/current.json`](football/current.json), verify its `manifestSha256`, then verify each shard against the selected manifest before accepting any price.
+
 ## Verify
 
 Requires Node.js 22 or newer:
