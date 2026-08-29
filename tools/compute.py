@@ -71,7 +71,12 @@ OPTA_COMPETITIONS = {
 
 # FotMob's short names versus the Opta public feed's registered names.
 CLUB_ALIASES = {
+    "agf": "aarhus gymnastikforening",
+    "atalanta": "atalanta bergamasca calcio",
+    "besiktas": "besiktas jimnastik kulubu",
+    "braga": "sporting braga",
     "deportivo a coruna": "rc deportivo de a coruna",
+    "egnatia": "ks egnatia rrogozhine",
     "atletico madrid": "club atletico de madrid",
     "malaga": "malaga cf",
     "rayo vallecano": "rayo vallecano de madrid",
@@ -115,8 +120,16 @@ CLUB_ALIASES = {
     "angers": "angers sporting club de l ouest",
     "racing santander": "real racing club",
     "rennes": "stade rennais fc",
+    "fenerbahce": "fenerbahce spor kulubu",
+    "gent": "kaa gent",
+    "hoffenheim": "tsg 1899 hoffenheim",
+    "kups": "kuopion palloseura",
     "lask": "linzer athletik sport klub",
+    "lille": "lille osc",
     "nec nijmegen": "nec",
+    "ofi crete": "ofi fc",
+    "rapid wien": "sk rapid",
+    "rb leipzig": "rasenballsport leipzig",
 }
 
 # Clubs whose current registered ID is present in the frozen catalog but whose
@@ -132,6 +145,14 @@ CLUB_ID_OVERRIDES = {
     "rennes": ("z1wbqtd0fz5t5eezjvrbld3h", "Stade Rennais FC"),
     "lask": ("boxkkgnpn38ywao4kzu7dx58h", "Linzer Athletik Sport Klub"),
     "nec nijmegen": ("8iawijq7s9s6d85mjz8wdslki", "NEC"),
+}
+
+# Clubs making their first eligible appearance after the sealed catalog cut.
+# The namespace keeps the provider identity explicit instead of fabricating an
+# Opta identifier.  Once admitted, the ID persists in the calculator checkpoint
+# and every later batch resolves it from that saved state.
+PROVIDER_CLUB_ONBOARDING = {
+    "elversberg": ("fotmob:8232", "SV Elversberg"),
 }
 
 PLAYER_WEIGHTS = {
@@ -580,6 +601,9 @@ def resolve_catalog_club(name, catalog_clubs):
     if norm(name) in CLUB_ID_OVERRIDES:
         team_id, registered = CLUB_ID_OVERRIDES[norm(name)]
         return 1.0, team_id, registered
+    if norm(name) in PROVIDER_CLUB_ONBOARDING:
+        team_id, registered = PROVIDER_CLUB_ONBOARDING[norm(name)]
+        return 1.0, team_id, registered
     target = CLUB_ALIASES.get(norm(name), norm(name))
     ranked = sorted(
         (
@@ -939,6 +963,16 @@ def main():
     catalog_clubs, player_info, full_index, surname_index, rosters = build_identity_assets(
         catalog, CANONICAL_FACTS, prior_events, current_by_id
     )
+    # The saved checkpoint may already contain clubs admitted after the sealed
+    # historical catalog cut. Prefer their stable IDs in all later batches.
+    known_clubs = {team_id: registered for team_id, registered in catalog_clubs}
+    for row in current_rows:
+        if row.get("kind") == "CLUB":
+            known_clubs.setdefault(
+                row["entity_id"].split(":", 1)[1],
+                row["display_name"],
+            )
+    catalog_clubs = sorted(known_clubs.items())
 
     match_files = sorted(INPUT.glob("*.json"))
     matches = []
@@ -971,7 +1005,12 @@ def main():
         home = resolve_catalog_club(teams[0]["name"], catalog_clubs)
         away = resolve_catalog_club(teams[1]["name"], catalog_clubs)
         item["home_id"], item["away_id"] = "club:" + home[1], "club:" + away[1]
-        item["club_mapping"] = "SEALED_CATALOG"
+        item["home_registered_name"], item["away_registered_name"] = home[2], away[2]
+        item["club_mapping"] = (
+            "PROVIDER_ID_ONBOARDING"
+            if home[1].startswith("fotmob:") or away[1].startswith("fotmob:")
+            else "SEALED_CATALOG"
+        )
         item["club_mapping_scores"] = [round(home[0], 4), round(away[0], 4)]
 
     cells = []
@@ -1085,7 +1124,9 @@ def main():
                 profile = "BASIC_PARTIAL"
             result = "WIN" if goals > conceded else "LOSS" if goals < conceded else "DRAW"
             cells.append({
-                "kind": "CLUB", "entity_id": club_id, "name": teams[idx]["name"], "role": "UNKNOWN",
+                "kind": "CLUB", "entity_id": club_id,
+                "name": item["home_registered_name"] if side == "HOME" else item["away_registered_name"],
+                "role": "UNKNOWN",
                 "opponent_id": opp_id, "competition_id": item["competition_id"], "active_seconds": SECONDS_90,
                 "metrics": metrics, "kickoff": item["kickoff"], "match_id": "fotmob:" + str(g["matchId"]),
                 "profile": profile, "side": side, "result": result,

@@ -6,8 +6,9 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current publication is **26 August 2026, 00:00 UTC**: 12,250 entities and
-2,383 movement records across 2,175 changed entities. Friendlies are excluded.
+The current publication is **30 August 2026, 00:00 UTC**: 12,330 entities and
+4,327 movement records across 2,833 changed entities. It incorporates 71
+eligible completed matches from 26–29 August; friendlies are excluded.
 
 ## Update prices
 
@@ -39,7 +40,9 @@ Remove `--dry-run` only after reviewing the candidate summary. The command:
 
 It refuses an incomplete or unexpected batch, a broken price chain, a reference
 change without a movement, a future event, or an attempt to overwrite a dated
-publication. Raw provider payloads stay outside this repository.
+publication. Additive entity debuts must start from the canonical 1,000
+reference; existing entities cannot disappear from a later publication. Raw
+provider payloads stay outside this repository.
 
 The batch format is standardized by
 [`schemas/update-batch.v1.schema.json`](schemas/update-batch.v1.schema.json).
@@ -91,9 +94,10 @@ npm test
 ```
 
 The regression suite checks that the checked-in detailed state reproduces every
-current public reference and movement, and that the band code reproduces all
-2,175 changed entities. It also creates the same synthetic publication twice,
-checks byte determinism, and verifies the staged feed with the public verifier.
+current public reference and movement, and that the band code reproduces every
+changed entity declared by the active manifest. It also creates the same
+synthetic publication twice, checks byte determinism, and verifies the staged
+feed with the public verifier.
 
 To verify only the current public publication:
 
