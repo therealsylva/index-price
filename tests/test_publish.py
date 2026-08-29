@@ -14,11 +14,11 @@ from tools.publish import (
     band,
     canonical_bytes,
     digest_bytes,
+    digest_file,
     load_band_policy,
     publish,
     write_json,
 )
-from tools.state_io import canonical_bytes as state_bytes
 from tools.state_io import load_checkpoint
 
 
@@ -36,8 +36,14 @@ class CurrentPublicationRegressionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.policy = load_band_policy(ROOT / "config/publication-v3.json")
+        cls.public_pointer = json.loads((ROOT / "football/current.json").read_text(encoding="utf-8"))
+        cls.public_manifest_path = ROOT / cls.public_pointer["manifest"]
+        cls.public_manifest = json.loads(cls.public_manifest_path.read_text(encoding="utf-8"))
+        cls.state_pointer = json.loads((ROOT / "state/current.json").read_text(encoding="utf-8"))
+        cls.state_manifest_path = ROOT / cls.state_pointer["manifest"]
+        cls.state_manifest = json.loads(cls.state_manifest_path.read_text(encoding="utf-8"))
         cls.state, cls.events = load_checkpoint(ROOT / "state/current.json")
-        cls.publication = ROOT / "football/2026-08-26"
+        cls.publication = cls.public_manifest_path.parent
         cls.snapshots = load_public_rows(cls.publication, "snapshot")
         cls.movements = load_public_rows(cls.publication, "movements")
 
@@ -72,7 +78,7 @@ class CurrentPublicationRegressionTests(unittest.TestCase):
             actual = public[row["entity_id"]]
             self.assertEqual(expected, (actual["lowerMicros"], actual["upperMicros"]))
             changed += 1
-        self.assertEqual(changed, 2_175)
+        self.assertEqual(changed, self.public_manifest["changedEntities"])
 
     def test_detailed_ledger_projects_to_every_public_movement(self):
         detailed = sorted((
@@ -85,15 +91,18 @@ class CurrentPublicationRegressionTests(unittest.TestCase):
         ) for row in self.movements)
         self.assertEqual(public, detailed)
 
-    def test_sharded_checkpoint_reconstructs_original_commitments(self):
+    def test_active_pointers_commit_to_matching_publication_and_state(self):
         self.assertEqual(
-            digest_bytes(state_bytes(self.state)),
-            "e46d4665f971406ac4ba428d08197a49c2413bd69e9ddcf47830600b0f252c92",
+            digest_file(self.public_manifest_path),
+            self.public_pointer["manifestSha256"],
         )
         self.assertEqual(
-            digest_bytes(state_bytes(self.events)),
-            "9db97cd9fcd4eec4cd6afde79f3a41bce121980aff4eb92daf6929a01b20a18f",
+            digest_file(self.state_manifest_path),
+            self.state_pointer["manifestSha256"],
         )
+        self.assertEqual(self.public_pointer["asOf"], self.state_pointer["asOf"])
+        self.assertEqual(self.state_manifest["indexRows"], len(self.state["rows"]))
+        self.assertEqual(self.state_manifest["movementRows"], len(self.events))
 
 
 class PublisherIntegrationTests(unittest.TestCase):
@@ -236,6 +245,102 @@ class PublisherIntegrationTests(unittest.TestCase):
                     capture_output=True,
                     text=True,
                 )
+
+    def test_publisher_onboards_new_entity_from_1000(self):
+        with tempfile.TemporaryDirectory() as name:
+            temp = Path(name)
+            previous = temp / "previous"
+            self.make_previous(previous)
+            candidate = self.make_candidate(temp)
+
+            forward_path = candidate / "updated-index.json"
+            forward = json.loads(forward_path.read_text(encoding="utf-8"))
+            forward["rows"].append({
+                "density_ppm": 500_000,
+                "display_name": "SV Elversberg",
+                "effective_at": "2026-08-26T12:00:00Z",
+                "entity_id": "club:fotmob:8232",
+                "kind": "CLUB",
+                "reference_micros": 990_000_000,
+            })
+            write_json(forward_path, forward)
+
+            events_path = candidate / "movement-events.json"
+            events = json.loads(events_path.read_text(encoding="utf-8"))
+            events.append({
+                "baseline_sources": [],
+                "entity_id": "club:fotmob:8232",
+                "kickoff": "2026-08-26T12:00:00Z",
+                "kind": "CLUB",
+                "match_id": "fotmob:2",
+                "next_reference_micros": 990_000_000,
+                "opponent_id": "club:example",
+                "performance_log_return_ppm": -10_050,
+                "profile": "BASIC_PARTIAL",
+                "published_log_return_ppm": -10_050,
+                "result_log_return_ppm": 0,
+                "role": "UNKNOWN",
+                "previous_reference_micros": 1_000_000_000,
+            })
+            write_json(events_path, events)
+
+            output, _, result = self.publish_once(
+                previous,
+                candidate,
+                temp / "published",
+            )
+            snapshots = {row["entityId"]: row for row in load_public_rows(output, "snapshot")}
+            movements = {
+                row["entityId"]: row for row in load_public_rows(output, "movements")
+            }
+
+            self.assertEqual(result["snapshot_rows"], 2)
+            self.assertEqual(result["new_movements"], 2)
+            self.assertEqual(snapshots["club:fotmob:8232"]["version"], 1)
+            self.assertEqual(snapshots["club:fotmob:8232"]["referenceMicros"], 990_000_000)
+            self.assertEqual(movements["club:fotmob:8232"]["previousReferenceMicros"], 1_000_000_000)
+            self.assertEqual(movements["club:fotmob:8232"]["version"], 1)
+
+    def test_publisher_rejects_new_entity_with_nonstandard_start(self):
+        with tempfile.TemporaryDirectory() as name:
+            temp = Path(name)
+            previous = temp / "previous"
+            self.make_previous(previous)
+            candidate = self.make_candidate(temp)
+
+            forward_path = candidate / "updated-index.json"
+            forward = json.loads(forward_path.read_text(encoding="utf-8"))
+            forward["rows"].append({
+                "density_ppm": 500_000,
+                "display_name": "New Club",
+                "effective_at": "2026-08-26T12:00:00Z",
+                "entity_id": "club:provider:new",
+                "kind": "CLUB",
+                "reference_micros": 990_000_000,
+            })
+            write_json(forward_path, forward)
+
+            events_path = candidate / "movement-events.json"
+            events = json.loads(events_path.read_text(encoding="utf-8"))
+            events.append({
+                "baseline_sources": [],
+                "entity_id": "club:provider:new",
+                "kickoff": "2026-08-26T12:00:00Z",
+                "kind": "CLUB",
+                "match_id": "fotmob:2",
+                "next_reference_micros": 990_000_000,
+                "opponent_id": "club:example",
+                "performance_log_return_ppm": -10_050,
+                "profile": "BASIC_PARTIAL",
+                "published_log_return_ppm": -10_050,
+                "result_log_return_ppm": 0,
+                "role": "UNKNOWN",
+                "previous_reference_micros": 900_000_000,
+            })
+            write_json(events_path, events)
+
+            with self.assertRaisesRegex(ValueError, "does not debut from 1,000"):
+                self.publish_once(previous, candidate, temp / "published")
 
 
 if __name__ == "__main__":

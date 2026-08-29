@@ -327,10 +327,9 @@ def publish(args: argparse.Namespace) -> dict:
     candidate_by_id = {row["entity_id"]: row for row in forward.get("rows", [])}
     if len(previous_by_id) != len(previous_snapshots) or len(candidate_by_id) != len(forward.get("rows", [])):
         raise ValueError("duplicate entity in previous or candidate state")
-    if set(candidate_by_id) != set(previous_by_id):
-        missing_ids = sorted(set(previous_by_id) - set(candidate_by_id))[:10]
-        extra_ids = sorted(set(candidate_by_id) - set(previous_by_id))[:10]
-        raise ValueError(f"entity universe changed; missing={missing_ids}, extra={extra_ids}")
+    missing_ids = sorted(set(previous_by_id) - set(candidate_by_id))[:10]
+    if missing_ids:
+        raise ValueError(f"candidate removed existing entities: {missing_ids}")
 
     new_events_by_entity: dict[str, list[dict]] = defaultdict(list)
     cumulative_events = load_json(movements_path)
@@ -373,16 +372,24 @@ def publish(args: argparse.Namespace) -> dict:
     new_movement_rows: list[dict] = []
     for entity_id in sorted(candidate_by_id):
         row = candidate_by_id[entity_id]
-        prior = previous_by_id[entity_id]
+        prior = previous_by_id.get(entity_id)
         events = new_events_by_entity.get(entity_id, [])
-        if row["kind"] != prior["kind"]:
+        if prior is not None and row["kind"] != prior["kind"]:
             raise ValueError(f"entity kind changed: {entity_id}")
         reference = int(row["reference_micros"])
         density = int(row["density_ppm"])
-        version = int(prior["version"])
+        version = int(prior["version"]) if prior is not None else 0
 
         if events:
-            expected_reference = int(prior["referenceMicros"])
+            expected_reference = (
+                int(prior["referenceMicros"])
+                if prior is not None
+                else 1_000_000_000
+            )
+            if prior is None and int(events[0]["previous_reference_micros"]) != expected_reference:
+                raise ValueError(
+                    f"new entity does not debut from 1,000: {entity_id}"
+                )
             for index, event in enumerate(events, start=1):
                 if event.get("kind") != row["kind"] or event.get("entity_id") != entity_id:
                     raise ValueError(f"movement identity mismatch: {entity_id}")
@@ -427,6 +434,8 @@ def publish(args: argparse.Namespace) -> dict:
             version += len(events)
             status = "PARTIAL_COVERAGE" if latest["profile"] == "BASIC_PARTIAL" else "AVAILABLE"
         else:
+            if prior is None:
+                raise ValueError(f"new entity has no debut movement: {entity_id}")
             if reference != int(prior["referenceMicros"]):
                 raise ValueError(f"reference changed without movement: {entity_id}")
             if density != int(prior["densityPpm"]):

@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.compute import load_batch_manifest
+from tools.compute import load_batch_manifest, resolve_catalog_club
 
 
 class BatchManifestTests(unittest.TestCase):
@@ -61,6 +61,23 @@ class BatchManifestTests(unittest.TestCase):
         self.addCleanup(directory.cleanup)
         with self.assertRaisesRegex(ValueError, "unexpected or missing"):
             load_batch_manifest(path)
+
+
+class ClubIdentityTests(unittest.TestCase):
+    def test_alias_prevents_plausible_wrong_fuzzy_match(self):
+        clubs = [
+            ("braga", "Riga FC"),
+            ("correct", "Sporting Braga"),
+        ]
+        score, entity_id, registered = resolve_catalog_club("Braga", clubs)
+        self.assertEqual((score, entity_id, registered), (1.0, "correct", "Sporting Braga"))
+
+    def test_provider_club_debut_uses_stable_provider_identity(self):
+        score, entity_id, registered = resolve_catalog_club("Elversberg", [])
+        self.assertEqual(
+            (score, entity_id, registered),
+            (1.0, "fotmob:8232", "SV Elversberg"),
+        )
 
 
 if __name__ == "__main__":
