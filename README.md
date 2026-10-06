@@ -6,9 +6,11 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current publication is **1 September 2026, 00:00 UTC**: 12,334 entities and
-4,934 movement records across 2,948 changed entities. It incorporates 20
-eligible completed matches from 30–31 August; friendlies are excluded.
+The current proposed publication is **6 October 2026, 00:00 UTC**: 12,344
+price rows and 9,465 cumulative movement records across 4,531 changed entities.
+It incorporates 153 eligible completed matches from 1 September through 5
+October; friendlies are excluded. The update is awaiting review in its pull
+request, and production publication remains disabled by policy.
 
 ## Update prices
 
