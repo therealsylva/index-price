@@ -50,7 +50,7 @@ def calculate(request, archive_root, root, basis=None):
         })
         argv = sys.argv
         try:
-            sys.argv = ["compute.py", "--manual-match", *( ["--basis", str(basis)] if basis else ["--archive-root", str(archive_root)] ),
+            sys.argv = ["compute.py", "--manual-match", "--manual-baselines", str(root / "manual-baselines.json"), *( ["--basis", str(basis)] if basis else ["--archive-root", str(archive_root)] ),
                 "--base-forward-index", str(directory / "forward.json"), "--base-movement-events", str(directory / "movements.json"),
                 "--input-dir", str(inputs), "--output-dir", str(directory / "candidate"),
                 "--batch-manifest", str(directory / "batch.json"), "--parameters", str(root / "config/native-policy-v2.json")]
