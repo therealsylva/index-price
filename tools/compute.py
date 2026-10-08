@@ -13,6 +13,7 @@ Run with Python 3.11+.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import csv
 import hashlib
 import json
@@ -235,7 +236,7 @@ def parse_args():
     parser.add_argument(
         "--archive-root",
         type=Path,
-        required=True,
+        required=False,
         help="Root of the restored sealed historical calibration archive.",
     )
     parser.add_argument(
@@ -263,6 +264,7 @@ def parse_args():
         help="RC3.1.1 parameter package whose hash is bound into the receipt.",
     )
     parser.add_argument("--manual-match", action="store_true", help="Admin-verified intraday intake; deduplicate by match identity, with per-entity chronology fences.")
+    parser.add_argument("--basis", type=Path, help="Verified compact projection of the sealed calibration archive.")
     return parser.parse_args()
 
 
@@ -620,7 +622,7 @@ def resolve_catalog_club(name, catalog_clubs):
     return best
 
 
-def build_identity_assets(catalog, canonical_facts, prior_events, current_by_id):
+def build_identity_assets(catalog, canonical_facts, prior_events, current_by_id, sealed_rosters=None):
     """Build latest sealed club rosters and global exact-name fallbacks.
 
     Historical lineup facts establish the last known Opta club assignment.
@@ -664,7 +666,11 @@ def build_identity_assets(catalog, canonical_facts, prior_events, current_by_id)
         if previous is None or at >= previous[0]:
             assignments[pid] = (at, cid, position or "")
 
-    with canonical_facts.open(encoding="utf-8") as source:
+    if sealed_rosters is not None:
+        for cid, players in sealed_rosters.items():
+            for pid, player in players.items():
+                assign(pid, cid, datetime.min.replace(tzinfo=timezone.utc), player.get("position", ""))
+    with (canonical_facts.open(encoding="utf-8") if canonical_facts is not None else contextlib.nullcontext([])) as source:
         for line in source:
             if '"fact_type":"LINEUP_CONFIRMATION"' not in line:
                 continue
@@ -891,7 +897,12 @@ def main():
     args = parse_args()
     batch_manifest_path = args.batch_manifest.resolve()
     batch_manifest = load_batch_manifest(batch_manifest_path, allow_intraday=args.manual_match)
-    archive = args.archive_root.resolve()
+    basis = load_json(args.basis.resolve()) if args.basis else None
+    if basis is not None and basis.get("schema") != "blackbook.index.live-calibration-basis.v1":
+        raise ValueError("unsupported live calibration basis")
+    if basis is None and args.archive_root is None:
+        raise ValueError("archive root or verified basis is required")
+    archive = args.archive_root.resolve() if args.archive_root else Path(".")
     materialized = archive / "derived/materialized-calibrated-v2-final"
     HISTORICAL_INDEX = materialized / "current-index.json"
     CATALOG = archive / "derived/entity-catalog.json"
@@ -906,11 +917,7 @@ def main():
     AS_OF = batch_manifest["asOf"]
     EXPECTED_MATCH_IDS = set(batch_manifest["expectedMatchIds"])
 
-    required = [
-        HISTORICAL_INDEX,
-        CATALOG,
-        CANONICAL_FACTS,
-        SOURCE_LOCK,
+    required = ([HISTORICAL_INDEX, CATALOG, CANONICAL_FACTS, SOURCE_LOCK] if basis is None else [args.basis.resolve()]) + [
         BASE_FORWARD_INDEX,
         BASE_MOVEMENT_EVENTS,
         PARAMS,
@@ -922,10 +929,10 @@ def main():
     if OUTPUT.exists() and any(OUTPUT.iterdir()):
         raise RuntimeError(f"Output directory must be empty: {OUTPUT}")
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    historical = load_json(HISTORICAL_INDEX)
+    historical = load_json(HISTORICAL_INDEX) if basis is None else {"rows": basis["historicalRows"]}
     forward = load_json(BASE_FORWARD_INDEX)
     prior_events = load_json(BASE_MOVEMENT_EVENTS)
-    catalog = load_json(CATALOG)
+    catalog = load_json(CATALOG) if basis is None else basis["catalog"]
     parameters = load_json(PARAMS)
     if parameters.get("schema") != "blackbook.index.rc3.1.native-policy.v2":
         raise RuntimeError("unsupported RC3.1 parameter package")
@@ -965,7 +972,8 @@ def main():
         for r in current_rows
     }
     catalog_clubs, player_info, full_index, surname_index, rosters = build_identity_assets(
-        catalog, CANONICAL_FACTS, prior_events, current_by_id
+        catalog, CANONICAL_FACTS if basis is None else None, prior_events, current_by_id,
+        sealed_rosters=None if basis is None else basis["rosters"]
     )
     # The saved checkpoint may already contain clubs admitted after the sealed
     # historical catalog cut. Prefer their stable IDs in all later batches.
@@ -1358,12 +1366,12 @@ The update carries the saved reference, density, reliability, slow component sta
                    "clubs_repriced": sum(r["kind"] == "CLUB" for r in change_rows),
                    "players_repriced": sum(r["kind"] == "PLAYER" for r in change_rows)},
         "baseline_usage": dict(baseline_usage),
-        "inputs": {"historical_index_sha256": sha256(HISTORICAL_INDEX),
+        "inputs": {"historical_index_sha256": sha256(HISTORICAL_INDEX) if basis is None else basis["sourceHashes"]["historical_index_sha256"],
                    "batch_manifest_sha256": sha256(batch_manifest_path),
                    "base_forward_index_sha256": sha256(BASE_FORWARD_INDEX),
                    "base_movement_events_sha256": sha256(BASE_MOVEMENT_EVENTS),
-                   "canonical_facts_sha256": sha256(CANONICAL_FACTS),
-                   "source_lock_sha256": sha256(SOURCE_LOCK),
+                   "canonical_facts_sha256": sha256(CANONICAL_FACTS) if basis is None else basis["sourceHashes"]["canonical_facts_sha256"],
+                   "source_lock_sha256": sha256(SOURCE_LOCK) if basis is None else basis["sourceHashes"]["source_lock_sha256"],
                    "rc3_1_parameters_sha256": sha256(PARAMS),
                    "match_files": {p.name: sha256(p) for p in match_files}},
         "limitations": [
