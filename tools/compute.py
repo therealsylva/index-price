@@ -262,10 +262,11 @@ def parse_args():
         default=REPO_ROOT / "config/native-policy-v2.json",
         help="RC3.1.1 parameter package whose hash is bound into the receipt.",
     )
+    parser.add_argument("--manual-match", action="store_true", help="Admin-verified intraday intake; deduplicate by match identity, with per-entity chronology fences.")
     return parser.parse_args()
 
 
-def load_batch_manifest(path: Path) -> dict:
+def load_batch_manifest(path: Path, allow_intraday: bool = False) -> dict:
     manifest = load_json(path)
     expected_keys = {"schema", "from", "asOf", "provider", "expectedMatchIds"}
     if set(manifest) != expected_keys:
@@ -280,7 +281,7 @@ def load_batch_manifest(path: Path) -> dict:
             or start >= end):
         raise ValueError("batch manifest must define an increasing UTC window")
     midnight = (0, 0, 0, 0)
-    if ((start.hour, start.minute, start.second, start.microsecond) != midnight
+    if not allow_intraday and ((start.hour, start.minute, start.second, start.microsecond) != midnight
             or (end.hour, end.minute, end.second, end.microsecond) != midnight):
         raise ValueError("batch manifest cuts must be at 00:00 UTC")
     raw_ids = manifest["expectedMatchIds"]
@@ -889,7 +890,7 @@ def main():
 
     args = parse_args()
     batch_manifest_path = args.batch_manifest.resolve()
-    batch_manifest = load_batch_manifest(batch_manifest_path)
+    batch_manifest = load_batch_manifest(batch_manifest_path, allow_intraday=args.manual_match)
     archive = args.archive_root.resolve()
     materialized = archive / "derived/materialized-calibrated-v2-final"
     HISTORICAL_INDEX = materialized / "current-index.json"
@@ -950,6 +951,9 @@ def main():
             raise RuntimeError(f"base movement ledger contains duplicate event {identity}")
         prior_identities.add(identity)
         prior_by_entity[event["entity_id"]].append(event)
+    prior_matches = {event.get("match_id") for event in prior_events}
+    if args.manual_match and prior_matches.intersection(EXPECTED_MATCH_IDS):
+        raise RuntimeError("Manual match was already applied to this checkpoint")
     for entity_id, events in prior_by_entity.items():
         if entity_id not in current_by_id:
             raise RuntimeError(f"base movement ledger references unknown entity {entity_id}")
@@ -982,7 +986,8 @@ def main():
         if not g.get("finished") or g.get("leagueName") not in COMPETITION_IDS:
             continue
         kickoff = dt(g["matchTimeUTCDate"])
-        if not (dt(SNAPSHOT_CUT) <= kickoff < dt(AS_OF)):
+        lower_cut = forward["snapshot_cut"] if args.manual_match else SNAPSHOT_CUT
+        if not (dt(lower_cut) <= kickoff < dt(AS_OF)):
             continue
         matches.append({"path": path, "raw": m, "kickoff": kickoff,
                         "competition_id": COMPETITION_IDS[g["leagueName"]]})
@@ -1177,6 +1182,8 @@ def main():
 
         for cell in sorted(group, key=lambda c: (c["kind"] != "CLUB", c["entity_id"])):
             state = ensure_state(states, cell["entity_id"], cell["kind"], cell["name"], cell["role"])
+            if args.manual_match and kickoff < state["last"]:
+                raise RuntimeError(f"Late match requires an explicit correction for {cell['entity_id']}")
             state["slow"] = decay_slow(state["slow"], state["last"], kickoff, cell["kind"])
             opp = ensure_state(states, cell["opponent_id"], "CLUB", cell["opponent_id"])
             opp_slow = decay_slow(opp["slow"], opp["last"], kickoff, "CLUB")

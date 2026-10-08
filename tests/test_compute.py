@@ -54,6 +54,14 @@ class BatchManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "00:00 UTC"):
             load_batch_manifest(path)
 
+    def test_manual_intake_allows_intraday_without_relaxing_utc_or_identity_checks(self):
+        value = self.valid_manifest()
+        value["asOf"] = "2026-08-27T12:00:00Z"
+        directory, path = self.write_manifest(value)
+        self.addCleanup(directory.cleanup)
+        actual = load_batch_manifest(path, allow_intraday=True)
+        self.assertEqual(actual["asOf"], "2026-08-27T12:00:00.000000Z")
+
     def test_rejects_unknown_fields(self):
         value = self.valid_manifest()
         value["note"] = "not committed input"
