@@ -13,6 +13,7 @@ Run with Python 3.11+.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import csv
 import hashlib
 import json
@@ -235,7 +236,7 @@ def parse_args():
     parser.add_argument(
         "--archive-root",
         type=Path,
-        required=True,
+        required=False,
         help="Root of the restored sealed historical calibration archive.",
     )
     parser.add_argument(
@@ -262,10 +263,14 @@ def parse_args():
         default=REPO_ROOT / "config/native-policy-v2.json",
         help="RC3.1.1 parameter package whose hash is bound into the receipt.",
     )
+    parser.add_argument("--manual-match", action="store_true", help="Admin-verified intraday intake; deduplicate by match identity, with per-entity chronology fences.")
+    parser.add_argument("--basis", type=Path, help="Verified compact projection of the sealed calibration archive.")
+    parser.add_argument("--manual-baselines", type=Path, help="Frozen comparison statistics from earlier verified matches.")
+    parser.add_argument("--export-baselines", type=Path, help="Extract comparison statistics only; do not calculate or publish prices.")
     return parser.parse_args()
 
 
-def load_batch_manifest(path: Path) -> dict:
+def load_batch_manifest(path: Path, allow_intraday: bool = False) -> dict:
     manifest = load_json(path)
     expected_keys = {"schema", "from", "asOf", "provider", "expectedMatchIds"}
     if set(manifest) != expected_keys:
@@ -280,7 +285,7 @@ def load_batch_manifest(path: Path) -> dict:
             or start >= end):
         raise ValueError("batch manifest must define an increasing UTC window")
     midnight = (0, 0, 0, 0)
-    if ((start.hour, start.minute, start.second, start.microsecond) != midnight
+    if not allow_intraday and ((start.hour, start.minute, start.second, start.microsecond) != midnight
             or (end.hour, end.minute, end.second, end.microsecond) != midnight):
         raise ValueError("batch manifest cuts must be at 00:00 UTC")
     raw_ids = manifest["expectedMatchIds"]
@@ -619,7 +624,7 @@ def resolve_catalog_club(name, catalog_clubs):
     return best
 
 
-def build_identity_assets(catalog, canonical_facts, prior_events, current_by_id):
+def build_identity_assets(catalog, canonical_facts, prior_events, current_by_id, sealed_rosters=None):
     """Build latest sealed club rosters and global exact-name fallbacks.
 
     Historical lineup facts establish the last known Opta club assignment.
@@ -663,7 +668,11 @@ def build_identity_assets(catalog, canonical_facts, prior_events, current_by_id)
         if previous is None or at >= previous[0]:
             assignments[pid] = (at, cid, position or "")
 
-    with canonical_facts.open(encoding="utf-8") as source:
+    if sealed_rosters is not None:
+        for cid, players in sealed_rosters.items():
+            for pid, player in players.items():
+                assign(pid, cid, datetime.min.replace(tzinfo=timezone.utc), player.get("position", ""))
+    with (canonical_facts.open(encoding="utf-8") if canonical_facts is not None else contextlib.nullcontext([])) as source:
         for line in source:
             if '"fact_type":"LINEUP_CONFIRMATION"' not in line:
                 continue
@@ -742,12 +751,26 @@ def add_window_baselines(pools, cells):
                 pools[key].append((rate, exposure))
 
 
-def baseline_for(snapshot_pools, window_pools, kind, role, comp, metric):
+def baseline_for(snapshot_pools, window_pools, kind, role, comp, metric, verified=None):
     candidates = ((kind, role, comp, metric), (kind, role, "*", metric), (kind, "*", "*", metric))
     # Extended-only metrics do not exist in the frozen BASIC replay; use the
     # small observation window, while all shared metrics remain source-frozen.
     primary = window_pools if metric in EXTENDED_ONLY else snapshot_pools
     secondary = snapshot_pools if primary is window_pools else window_pools
+    if verified is not None:
+        # A single match cannot establish a comparison population. Shared
+        # metrics still prefer the frozen snapshot; missing/Extended metrics
+        # use a population built entirely before this match.
+        if metric not in EXTENDED_ONLY:
+            for key in candidates:
+                base = robust_baseline(snapshot_pools.get(key), 30.0)
+                if base:
+                    return base, "SNAPSHOT_CELL"
+        for key in candidates:
+            base = verified.get(key)
+            if base and base[2] >= 30:
+                return base, "VERIFIED_PRIOR_MATCH_WINDOW"
+        raise RuntimeError(f"No verified prior baseline for {kind}/{role}/{comp}/{metric}")
     for pools, minimum in ((primary, 30.0), (secondary, 30.0)):
         for key in candidates:
             base = robust_baseline(pools.get(key), minimum)
@@ -756,12 +779,12 @@ def baseline_for(snapshot_pools, window_pools, kind, role, comp, metric):
     raise RuntimeError(f"No baseline for {kind}/{role}/{comp}/{metric}")
 
 
-def normalize_cell(cell, snapshot_pools, window_pools):
+def normalize_cell(cell, snapshot_pools, window_pools, verified=None):
     terms = PLAYER_TERMS if cell["kind"] == "PLAYER" else CLUB_TERMS
     observed = [0.0] * 8
     sources = set()
     for metric, units in cell["metrics"].items():
-        base, source = baseline_for(snapshot_pools, window_pools, cell["kind"], cell["role"], cell["competition_id"], metric)
+        base, source = baseline_for(snapshot_pools, window_pools, cell["kind"], cell["role"], cell["competition_id"], metric, verified)
         center, scale, _ = base
         rate = units * SECONDS_90 / cell["active_seconds"]
         z = (rate - center) / scale * PPM
@@ -889,8 +912,13 @@ def main():
 
     args = parse_args()
     batch_manifest_path = args.batch_manifest.resolve()
-    batch_manifest = load_batch_manifest(batch_manifest_path)
-    archive = args.archive_root.resolve()
+    batch_manifest = load_batch_manifest(batch_manifest_path, allow_intraday=args.manual_match)
+    basis = load_json(args.basis.resolve()) if args.basis else None
+    if basis is not None and basis.get("schema") != "blackbook.index.live-calibration-basis.v1":
+        raise ValueError("unsupported live calibration basis")
+    if basis is None and args.archive_root is None:
+        raise ValueError("archive root or verified basis is required")
+    archive = args.archive_root.resolve() if args.archive_root else Path(".")
     materialized = archive / "derived/materialized-calibrated-v2-final"
     HISTORICAL_INDEX = materialized / "current-index.json"
     CATALOG = archive / "derived/entity-catalog.json"
@@ -905,11 +933,7 @@ def main():
     AS_OF = batch_manifest["asOf"]
     EXPECTED_MATCH_IDS = set(batch_manifest["expectedMatchIds"])
 
-    required = [
-        HISTORICAL_INDEX,
-        CATALOG,
-        CANONICAL_FACTS,
-        SOURCE_LOCK,
+    required = ([HISTORICAL_INDEX, CATALOG, CANONICAL_FACTS, SOURCE_LOCK] if basis is None else [args.basis.resolve()]) + [
         BASE_FORWARD_INDEX,
         BASE_MOVEMENT_EVENTS,
         PARAMS,
@@ -921,10 +945,10 @@ def main():
     if OUTPUT.exists() and any(OUTPUT.iterdir()):
         raise RuntimeError(f"Output directory must be empty: {OUTPUT}")
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    historical = load_json(HISTORICAL_INDEX)
+    historical = load_json(HISTORICAL_INDEX) if basis is None else {"rows": basis["historicalRows"]}
     forward = load_json(BASE_FORWARD_INDEX)
     prior_events = load_json(BASE_MOVEMENT_EVENTS)
-    catalog = load_json(CATALOG)
+    catalog = load_json(CATALOG) if basis is None else basis["catalog"]
     parameters = load_json(PARAMS)
     if parameters.get("schema") != "blackbook.index.rc3.1.native-policy.v2":
         raise RuntimeError("unsupported RC3.1 parameter package")
@@ -950,6 +974,9 @@ def main():
             raise RuntimeError(f"base movement ledger contains duplicate event {identity}")
         prior_identities.add(identity)
         prior_by_entity[event["entity_id"]].append(event)
+    prior_matches = {event.get("match_id") for event in prior_events}
+    if args.manual_match and prior_matches.intersection(EXPECTED_MATCH_IDS):
+        raise RuntimeError("Manual match was already applied to this checkpoint")
     for entity_id, events in prior_by_entity.items():
         if entity_id not in current_by_id:
             raise RuntimeError(f"base movement ledger references unknown entity {entity_id}")
@@ -961,7 +988,8 @@ def main():
         for r in current_rows
     }
     catalog_clubs, player_info, full_index, surname_index, rosters = build_identity_assets(
-        catalog, CANONICAL_FACTS, prior_events, current_by_id
+        catalog, CANONICAL_FACTS if basis is None else None, prior_events, current_by_id,
+        sealed_rosters=None if basis is None else basis["rosters"]
     )
     # The saved checkpoint may already contain clubs admitted after the sealed
     # historical catalog cut. Prefer their stable IDs in all later batches.
@@ -982,7 +1010,8 @@ def main():
         if not g.get("finished") or g.get("leagueName") not in COMPETITION_IDS:
             continue
         kickoff = dt(g["matchTimeUTCDate"])
-        if not (dt(SNAPSHOT_CUT) <= kickoff < dt(AS_OF)):
+        lower_cut = forward["snapshot_cut"] if args.manual_match else SNAPSHOT_CUT
+        if not (dt(lower_cut) <= kickoff < dt(AS_OF)):
             continue
         matches.append({"path": path, "raw": m, "kickoff": kickoff,
                         "competition_id": COMPETITION_IDS[g["leagueName"]]})
@@ -1146,9 +1175,34 @@ def main():
     snapshot_pools = build_snapshot_baselines(historical["rows"])
     window_pools = defaultdict(list)
     add_window_baselines(window_pools, cells)
+    if args.export_baselines:
+        dump_json(args.export_baselines, {
+            "schema": "blackbook.index.manual-baselines.v1", "asOf": AS_OF,
+            "parametersSha256": sha256(PARAMS),
+            "matchFiles": {p.name: sha256(p) for p in match_files},
+            "cells": [{"key": list(key), "baseline": base}
+                      for key, values in sorted(window_pools.items())
+                      if (base := robust_baseline(values, 30.0))],
+        })
+        return
+    verified = None
+    if args.manual_baselines:
+        saved_baselines = load_json(args.manual_baselines)
+        if saved_baselines.get("schema") != "blackbook.index.manual-baselines.v1" or saved_baselines.get("parametersSha256") != sha256(PARAMS):
+            raise ValueError("Manual comparison population does not match the frozen parameters")
+        if any(dt(saved_baselines["asOf"]) > item["kickoff"] for item in matches):
+            raise ValueError("Manual comparison population must precede the match")
+        verified = {}
+        for row in saved_baselines["cells"]:
+            key, base = tuple(row["key"]), tuple(row["baseline"])
+            if len(key) != 4 or len(base) != 3 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in base) or base[1] <= 0 or base[2] < 30:
+                raise ValueError("Invalid manual comparison statistics")
+            if key in verified:
+                raise ValueError("Duplicate manual comparison statistics")
+            verified[key] = base
     baseline_usage = Counter()
     for cell in cells:
-        cell["observed"], sources = normalize_cell(cell, snapshot_pools, window_pools)
+        cell["observed"], sources = normalize_cell(cell, snapshot_pools, window_pools, verified)
         cell["baseline_sources"] = sources
         baseline_usage.update(sources)
 
@@ -1177,6 +1231,8 @@ def main():
 
         for cell in sorted(group, key=lambda c: (c["kind"] != "CLUB", c["entity_id"])):
             state = ensure_state(states, cell["entity_id"], cell["kind"], cell["name"], cell["role"])
+            if args.manual_match and kickoff < state["last"]:
+                raise RuntimeError(f"Late match requires an explicit correction for {cell['entity_id']}")
             state["slow"] = decay_slow(state["slow"], state["last"], kickoff, cell["kind"])
             opp = ensure_state(states, cell["opponent_id"], "CLUB", cell["opponent_id"])
             opp_slow = decay_slow(opp["slow"], opp["last"], kickoff, "CLUB")
@@ -1309,6 +1365,7 @@ def main():
     basic_count = sum(a["profile"] == "BASIC_PARTIAL" for a in audits)
     mapped_count = sum(a["players_mapped"] for a in audits)
     stats_count = sum(a["players_with_stats"] for a in audits)
+    comparison_note = "verified prior-match population" if verified is not None else "robust current-batch window fallback"
     summary = f"""# Football index forward update — {AS_OF}
 
 This incremental calculation starts from the published state at {SNAPSHOT_CUT} and applies only completed, in-scope competitive matches declared by the batch manifest through {AS_OF}. Earlier accepted state and movements remain cumulative. Friendlies are excluded by the frozen competition allow-list.
@@ -1337,7 +1394,7 @@ This incremental calculation starts from the published state at {SNAPSHOT_CUT} a
 
 ## Method note
 
-The update carries the saved reference, density, reliability, slow component state and seven-day cap ledger forward; applies RC3.1 Extended component/reference weights, calibrated response gains and contextual result probabilities; and does not replay or retune the sealed historical corpus. Existing frozen component cells supply robust baselines. Newly observed progression/delivery fields use a robust current-batch window fallback. The progressive-pass proxy is line-breaking passes plus passes into the final third because the source does not expose RC3.1 event flags directly. Player identities come from the sealed catalog and latest verified lineup assignments, with unresolved appearances held. The result model is initialized from relative saved club prices because the historical replay did not publish its separate latent result-rating state. This remains an auditable forward bridge into the canonical publication step.
+The update carries the saved reference, density, reliability, slow component state and seven-day cap ledger forward; applies RC3.1 Extended component/reference weights, calibrated response gains and contextual result probabilities; and does not replay or retune the sealed historical corpus. Existing frozen component cells supply robust baselines. Newly observed progression/delivery fields use a {comparison_note}. The progressive-pass proxy is line-breaking passes plus passes into the final third because the source does not expose RC3.1 event flags directly. Player identities come from the sealed catalog and latest verified lineup assignments, with unresolved appearances held. The result model is initialized from relative saved club prices because the historical replay did not publish its separate latent result-rating state. This remains an auditable forward bridge into the canonical publication step.
 """
     (OUTPUT / "summary.md").write_text(summary, encoding="utf-8")
 
@@ -1351,16 +1408,17 @@ The update carries the saved reference, density, reliability, slow component sta
                    "clubs_repriced": sum(r["kind"] == "CLUB" for r in change_rows),
                    "players_repriced": sum(r["kind"] == "PLAYER" for r in change_rows)},
         "baseline_usage": dict(baseline_usage),
-        "inputs": {"historical_index_sha256": sha256(HISTORICAL_INDEX),
+        "inputs": {"historical_index_sha256": sha256(HISTORICAL_INDEX) if basis is None else basis["sourceHashes"]["historical_index_sha256"],
                    "batch_manifest_sha256": sha256(batch_manifest_path),
                    "base_forward_index_sha256": sha256(BASE_FORWARD_INDEX),
                    "base_movement_events_sha256": sha256(BASE_MOVEMENT_EVENTS),
-                   "canonical_facts_sha256": sha256(CANONICAL_FACTS),
-                   "source_lock_sha256": sha256(SOURCE_LOCK),
+                   "canonical_facts_sha256": sha256(CANONICAL_FACTS) if basis is None else basis["sourceHashes"]["canonical_facts_sha256"],
+                   "source_lock_sha256": sha256(SOURCE_LOCK) if basis is None else basis["sourceHashes"]["source_lock_sha256"],
                    "rc3_1_parameters_sha256": sha256(PARAMS),
+                   "manual_baselines_sha256": sha256(args.manual_baselines) if args.manual_baselines else None,
                    "match_files": {p.name: sha256(p) for p in match_files}},
         "limitations": [
-            "Extended progression/delivery baselines use the current-batch window fallback.",
+            "Extended progression/delivery baselines use the verified prior-match population." if verified is not None else "Extended progression/delivery baselines use the current-batch window fallback.",
             "Progressive pass uses line-breaking plus final-third passes as the available provider proxy.",
             "The separate unpublished result-rating state is initialized from relative saved club prices at the batch cut.",
             "Player identity uses the sealed catalog plus latest verified lineup assignment.",

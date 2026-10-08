@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.compute import load_batch_manifest, resolve_catalog_club
+from tools.compute import load_batch_manifest, resolve_catalog_club, baseline_for
 
 
 class BatchManifestTests(unittest.TestCase):
@@ -54,6 +54,14 @@ class BatchManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "00:00 UTC"):
             load_batch_manifest(path)
 
+    def test_manual_intake_allows_intraday_without_relaxing_utc_or_identity_checks(self):
+        value = self.valid_manifest()
+        value["asOf"] = "2026-08-27T12:00:00Z"
+        directory, path = self.write_manifest(value)
+        self.addCleanup(directory.cleanup)
+        actual = load_batch_manifest(path, allow_intraday=True)
+        self.assertEqual(actual["asOf"], "2026-08-27T12:00:00.000000Z")
+
     def test_rejects_unknown_fields(self):
         value = self.valid_manifest()
         value["note"] = "not committed input"
@@ -62,6 +70,23 @@ class BatchManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unexpected or missing"):
             load_batch_manifest(path)
 
+
+class ManualComparisonTests(unittest.TestCase):
+    def test_single_match_uses_prior_population_and_never_self_calibrates(self):
+        key = ('PLAYER', '*', '*', 'progressive_pass_net')
+        prior = {key: (100.0, 20.0, 31.0)}
+        current = {key: [(999999, 100)]}
+        base, source = baseline_for({}, current, 'PLAYER', 'AM_W', 'football:fra:ligue-1', 'progressive_pass_net', prior)
+        self.assertEqual(base, prior[key])
+        self.assertEqual(source, 'VERIFIED_PRIOR_MATCH_WINDOW')
+        with self.assertRaisesRegex(RuntimeError, 'No verified prior baseline'):
+            baseline_for({}, current, 'PLAYER', 'AM_W', 'football:fra:ligue-1', 'progressive_pass_net', {})
+
+    def test_shared_metrics_prefer_sealed_snapshot(self):
+        key = ('CLUB', '*', '*', 'goal_outcome')
+        base, source = baseline_for({key: [(50, 31)]}, {}, 'CLUB', 'UNKNOWN', 'football:fra:ligue-1', 'goal_outcome', {key: (999, 1, 31)})
+        self.assertEqual(base[0], 50)
+        self.assertEqual(source, 'SNAPSHOT_CELL')
 
 class ClubIdentityTests(unittest.TestCase):
     def test_alias_prevents_plausible_wrong_fuzzy_match(self):
