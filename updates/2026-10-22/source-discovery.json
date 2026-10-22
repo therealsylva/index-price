@@ -1,0 +1,4566 @@
+{
+  "schema": "blackbook.index.match-discovery-audit.v1",
+  "from": "2026-10-06T00:00:00+00:00",
+  "asOf": "2026-10-22T00:00:00+00:00",
+  "capturedAt": "2026-10-22T06:57:20.304865+00:00",
+  "currentScope": [
+    "Premier League (ENG)",
+    "LaLiga (ESP)",
+    "Ligue 1 (FRA)",
+    "Serie A (ITA)",
+    "Bundesliga (GER)",
+    "UEFA Champions League Qualification",
+    "UEFA Europa League Qualification",
+    "UEFA Conference League Qualification"
+  ],
+  "eligibilityNote": "Uses the existing compute.py allow-list without adding competitions. UEFA league-phase matches, international games, domestic cups, other leagues and unfinished fixtures are excluded.",
+  "eligibleMatchCount": 96,
+  "excludedScheduleEntryCount": 3983,
+  "excludedGroups": [
+    {
+      "reason": "NOT_COMPLETED",
+      "competition": "LaLiga",
+      "countryCode": "ESP",
+      "primaryLeagueId": 87,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. CFL",
+      "countryCode": "MNE",
+      "primaryLeagueId": 232,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. Division",
+      "countryCode": "DEN",
+      "primaryLeagueId": 85,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. Division Kvinner",
+      "countryCode": "NOR",
+      "primaryLeagueId": 332,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. Divisjon",
+      "countryCode": "NOR",
+      "primaryLeagueId": 203,
+      "count": 25
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. Lig",
+      "countryCode": "TUR",
+      "primaryLeagueId": 165,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. Liga",
+      "countryCode": "CZE",
+      "primaryLeagueId": 122,
+      "count": 17
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "1. Liga",
+      "countryCode": "SVK",
+      "primaryLeagueId": 176,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "2. Bundesliga",
+      "countryCode": "GER",
+      "primaryLeagueId": 146,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "2. Division",
+      "countryCode": "CYP",
+      "primaryLeagueId": 9100,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "2. Division",
+      "countryCode": "DEN",
+      "primaryLeagueId": 239,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "2. Divisjon Avd. 1",
+      "countryCode": "NOR",
+      "primaryLeagueId": 204,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "2. Divisjon Avd. 2",
+      "countryCode": "NOR",
+      "primaryLeagueId": 204,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "2. Liga",
+      "countryCode": "AUT",
+      "primaryLeagueId": 119,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Division",
+      "countryCode": "DEN",
+      "primaryLeagueId": 240,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Divisjon Avd. 1",
+      "countryCode": "NOR",
+      "primaryLeagueId": 205,
+      "count": 15
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Divisjon Avd. 2",
+      "countryCode": "NOR",
+      "primaryLeagueId": 205,
+      "count": 15
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Divisjon Avd. 3",
+      "countryCode": "NOR",
+      "primaryLeagueId": 205,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Divisjon Avd. 4",
+      "countryCode": "NOR",
+      "primaryLeagueId": 205,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Divisjon Avd. 5",
+      "countryCode": "NOR",
+      "primaryLeagueId": 205,
+      "count": 15
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Divisjon Avd. 6",
+      "countryCode": "NOR",
+      "primaryLeagueId": 205,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "3. Liga",
+      "countryCode": "GER",
+      "primaryLeagueId": 208,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "A Lyga",
+      "countryCode": "LTU",
+      "primaryLeagueId": 228,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "A-League",
+      "countryCode": "AUS",
+      "primaryLeagueId": 113,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "A-League Women",
+      "countryCode": "AUS",
+      "primaryLeagueId": 9495,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "A-Liga",
+      "countryCode": "DEN",
+      "primaryLeagueId": 256,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Challenge League Grp. A",
+      "countryCode": "INT",
+      "primaryLeagueId": 9470,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Challenge League Grp. B",
+      "countryCode": "INT",
+      "primaryLeagueId": 9470,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Challenge League Grp. C",
+      "countryCode": "INT",
+      "primaryLeagueId": 9470,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Challenge League Grp. D",
+      "countryCode": "INT",
+      "primaryLeagueId": 9470,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Challenge League Grp. E",
+      "countryCode": "INT",
+      "primaryLeagueId": 9470,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Elite East",
+      "countryCode": "INT",
+      "primaryLeagueId": 525,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Elite West",
+      "countryCode": "INT",
+      "primaryLeagueId": 525,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - A",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - B",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - C",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - D",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - E",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - F",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - G",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "AFC Champions League Two - H",
+      "countryCode": "INT",
+      "primaryLeagueId": 9469,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "ASEAN Club Championship - A",
+      "countryCode": "INT",
+      "primaryLeagueId": 11012,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "ASEAN Club Championship - B",
+      "countryCode": "INT",
+      "primaryLeagueId": 11012,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Africa Cup of Nations Qualification Grp. B",
+      "countryCode": "INT",
+      "primaryLeagueId": 10608,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Allsvenskan",
+      "countryCode": "SWE",
+      "primaryLeagueId": 67,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Australia Cup",
+      "countryCode": "AUS",
+      "primaryLeagueId": 9471,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Australian Championship Grp. A",
+      "countryCode": "AUS",
+      "primaryLeagueId": 8938,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Australian Championship Grp. B",
+      "countryCode": "AUS",
+      "primaryLeagueId": 8938,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Australian Championship Grp. C",
+      "countryCode": "AUS",
+      "primaryLeagueId": 8938,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Australian Championship Grp. D",
+      "countryCode": "AUS",
+      "primaryLeagueId": 8938,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Azadegan League",
+      "countryCode": "IRN",
+      "primaryLeagueId": 9372,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Baller League",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10844,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Bangladesh Football League",
+      "countryCode": "BAN",
+      "primaryLeagueId": 10443,
+      "count": 11
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Belgian Pro League",
+      "countryCode": "BEL",
+      "primaryLeagueId": 40,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Besta deildin - Championship Round",
+      "countryCode": "ISL",
+      "primaryLeagueId": 215,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Besta deildin - Relegation Round",
+      "countryCode": "ISL",
+      "primaryLeagueId": 215,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Botola Pro",
+      "countryCode": "MAR",
+      "primaryLeagueId": 530,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Bundesliga",
+      "countryCode": "AUT",
+      "primaryLeagueId": 38,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CAF Champions League Qualification",
+      "countryCode": "INT",
+      "primaryLeagueId": 10619,
+      "count": 17
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CAF Confed Cup - 2nd Preliminary Round",
+      "countryCode": "INT",
+      "primaryLeagueId": 9468,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Central American Cup Play-In",
+      "countryCode": "INT",
+      "primaryLeagueId": 9682,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League A Grp. 2",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League B Grp. 2",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League B Grp. 3",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League B Grp. 4",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League C Grp. 1",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League C Grp. 2",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "CONCACAF Nations League C Grp. 3",
+      "countryCode": "INT",
+      "primaryLeagueId": 9821,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Canadian Championship - Final",
+      "countryCode": "CAN",
+      "primaryLeagueId": 9837,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Challenge Cup",
+      "countryCode": "SCO",
+      "primaryLeagueId": 179,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Challenge League",
+      "countryCode": "SUI",
+      "primaryLeagueId": 163,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Champions League",
+      "countryCode": "INT",
+      "primaryLeagueId": 42,
+      "count": 27
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Champions League - League Stage",
+      "countryCode": "INT",
+      "primaryLeagueId": 42,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Championship",
+      "countryCode": "ENG",
+      "primaryLeagueId": 48,
+      "count": 37
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Championship",
+      "countryCode": "SCO",
+      "primaryLeagueId": 123,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "China League",
+      "countryCode": "CHN",
+      "primaryLeagueId": 9137,
+      "count": 24
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Club Friendlies",
+      "countryCode": "INT",
+      "primaryLeagueId": 489,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Conference League",
+      "countryCode": "INT",
+      "primaryLeagueId": 10216,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Copa Libertadores - Semi-finals",
+      "countryCode": "INT",
+      "primaryLeagueId": 45,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Copa Libertadores Femenina",
+      "countryCode": "INT",
+      "primaryLeagueId": 11021,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Copa Paulista - Finals",
+      "countryCode": "BRA",
+      "primaryLeagueId": 11646,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Copa Sudamericana - Semi-finals",
+      "countryCode": "INT",
+      "primaryLeagueId": 299,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Copa de la Liga - Final",
+      "countryCode": "CHI",
+      "primaryLeagueId": 11697,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Croatian Cup - 8th Finals",
+      "countryCode": "CRO",
+      "primaryLeagueId": 275,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "BEL",
+      "primaryLeagueId": 149,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "BUL",
+      "primaryLeagueId": 271,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "CHI",
+      "primaryLeagueId": 9091,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "COL",
+      "primaryLeagueId": 9490,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "CYP",
+      "primaryLeagueId": 330,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "JPN",
+      "primaryLeagueId": 9011,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "NOR",
+      "primaryLeagueId": 206,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "PAR",
+      "primaryLeagueId": 10230,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "RUS",
+      "primaryLeagueId": 193,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "SUI",
+      "primaryLeagueId": 164,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "SWE",
+      "primaryLeagueId": 171,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup",
+      "countryCode": "URU",
+      "primaryLeagueId": 10342,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup Grp. A",
+      "countryCode": "RUS",
+      "primaryLeagueId": 193,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup Grp. B",
+      "countryCode": "RUS",
+      "primaryLeagueId": 193,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup Grp. C",
+      "countryCode": "RUS",
+      "primaryLeagueId": 193,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cup Grp. D",
+      "countryCode": "RUS",
+      "primaryLeagueId": 193,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Cyprus League",
+      "countryCode": "CYP",
+      "primaryLeagueId": 136,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "DBU Pokalen",
+      "countryCode": "DEN",
+      "primaryLeagueId": 242,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Damallsvenskan",
+      "countryCode": "SWE",
+      "primaryLeagueId": 9089,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Division Profesional",
+      "countryCode": "PAR",
+      "primaryLeagueId": 199,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. A",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. B",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. C",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. D",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. E",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. F",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. G",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Northern Grp. H",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. A",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. B",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. C",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. D",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. E",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. F",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. G",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EFL Trophy Southern Grp. H",
+      "countryCode": "ENG",
+      "primaryLeagueId": 142,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. A",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. B",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. C",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. D",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. F",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. G",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. H",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "EURO U21 Qualification Grp. I",
+      "countryCode": "INT",
+      "primaryLeagueId": 10437,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Eerste Divisie",
+      "countryCode": "NED",
+      "primaryLeagueId": 111,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ekstraklasa",
+      "countryCode": "POL",
+      "primaryLeagueId": 196,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Eliteserien",
+      "countryCode": "NOR",
+      "primaryLeagueId": 59,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Elitettan",
+      "countryCode": "SWE",
+      "primaryLeagueId": 10308,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Eredivisie",
+      "countryCode": "NED",
+      "primaryLeagueId": 57,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Eredivisie Vrouwen",
+      "countryCode": "NED",
+      "primaryLeagueId": 10289,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Erovnuli Liga",
+      "countryCode": "GEO",
+      "primaryLeagueId": 439,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ettan Norra",
+      "countryCode": "SWE",
+      "primaryLeagueId": 169,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ettan Soedra",
+      "countryCode": "SWE",
+      "primaryLeagueId": 169,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Europa League",
+      "countryCode": "INT",
+      "primaryLeagueId": 73,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "FA Cup",
+      "countryCode": "SVK",
+      "primaryLeagueId": 177,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "FA Cup - 2nd Round",
+      "countryCode": "THA",
+      "primaryLeagueId": 11023,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "FA Cup Qualification",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10626,
+      "count": 43
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "FAI Cup",
+      "countryCode": "IRL",
+      "primaryLeagueId": 219,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "FNL",
+      "countryCode": "CZE",
+      "primaryLeagueId": 253,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Federal A Championship Playoff",
+      "countryCode": "ARG",
+      "primaryLeagueId": 9213,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Federal A Promotion Playoff",
+      "countryCode": "ARG",
+      "primaryLeagueId": 9213,
+      "count": 24
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "First Division",
+      "countryCode": "IRL",
+      "primaryLeagueId": 218,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "First Division B",
+      "countryCode": "BEL",
+      "primaryLeagueId": 264,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "First League",
+      "countryCode": "RUS",
+      "primaryLeagueId": 338,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "First Professional League",
+      "countryCode": "BUL",
+      "primaryLeagueId": 270,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Frauen-Bundesliga",
+      "countryCode": "GER",
+      "primaryLeagueId": 9676,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Friendlies",
+      "countryCode": "INT",
+      "primaryLeagueId": 114,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Friendlies",
+      "countryCode": "INT",
+      "primaryLeagueId": 293,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Gulf Cup",
+      "countryCode": "INT",
+      "primaryLeagueId": 329,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "HNL",
+      "countryCode": "CRO",
+      "primaryLeagueId": 252,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Highland League",
+      "countryCode": "SCO",
+      "primaryLeagueId": 9545,
+      "count": 27
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "I Liga",
+      "countryCode": "POL",
+      "primaryLeagueId": 197,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "II Liga",
+      "countryCode": "POL",
+      "primaryLeagueId": 8935,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Indian Super League",
+      "countryCode": "IND",
+      "primaryLeagueId": 9478,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Isthmian Premier Division",
+      "countryCode": "ENG",
+      "primaryLeagueId": 8947,
+      "count": 37
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "J. League",
+      "countryCode": "JPN",
+      "primaryLeagueId": 223,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "J. League 2",
+      "countryCode": "JPN",
+      "primaryLeagueId": 8974,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "J. League 3",
+      "countryCode": "JPN",
+      "primaryLeagueId": 9136,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "K League 2",
+      "countryCode": "KOR",
+      "primaryLeagueId": 9116,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "K-League 1",
+      "countryCode": "KOR",
+      "primaryLeagueId": 9080,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "K3 League",
+      "countryCode": "KOR",
+      "primaryLeagueId": 9537,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "KNVB Beker Women - 1st Round",
+      "countryCode": "NED",
+      "primaryLeagueId": 10668,
+      "count": 11
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Kansallinen Liiga Championship Group",
+      "countryCode": "FIN",
+      "primaryLeagueId": 10174,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Kansallinen Liiga Qualification Group",
+      "countryCode": "FIN",
+      "primaryLeagueId": 10186,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Kategoria Superiore",
+      "countryCode": "ALB",
+      "primaryLeagueId": 260,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "LPF Apertura",
+      "countryCode": "PAN",
+      "primaryLeagueId": 9039,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "LaLiga2",
+      "countryCode": "ESP",
+      "primaryLeagueId": 140,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup",
+      "countryCode": "JPN",
+      "primaryLeagueId": 224,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup",
+      "countryCode": "NIR",
+      "primaryLeagueId": 8978,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup",
+      "countryCode": "UAE",
+      "primaryLeagueId": 11027,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup Grp. A",
+      "countryCode": "EGY",
+      "primaryLeagueId": 10270,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup Grp. B",
+      "countryCode": "EGY",
+      "primaryLeagueId": 10270,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup Grp. C",
+      "countryCode": "EGY",
+      "primaryLeagueId": 10270,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Cup Grp. D",
+      "countryCode": "EGY",
+      "primaryLeagueId": 10270,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League One",
+      "countryCode": "ENG",
+      "primaryLeagueId": 108,
+      "count": 36
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League One",
+      "countryCode": "SCO",
+      "primaryLeagueId": 124,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Two",
+      "countryCode": "ENG",
+      "primaryLeagueId": 109,
+      "count": 36
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "League Two",
+      "countryCode": "SCO",
+      "primaryLeagueId": 125,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Leumit League",
+      "countryCode": "ISR",
+      "primaryLeagueId": 128,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga 1",
+      "countryCode": "PER",
+      "primaryLeagueId": 131,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga 3 Zona A",
+      "countryCode": "POR",
+      "primaryLeagueId": 9112,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga 3 Zona B",
+      "countryCode": "POR",
+      "primaryLeagueId": 9112,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga AUF Uruguaya Clausura",
+      "countryCode": "URU",
+      "primaryLeagueId": 161,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga F",
+      "countryCode": "ESP",
+      "primaryLeagueId": 9907,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga II",
+      "countryCode": "ROU",
+      "primaryLeagueId": 9113,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga MX",
+      "countryCode": "MEX",
+      "primaryLeagueId": 230,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga MX Femenil Apertura",
+      "countryCode": "MEX",
+      "primaryLeagueId": 9906,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga Nacional - Apertura",
+      "countryCode": "HON",
+      "primaryLeagueId": 337,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga Nacional Apertura",
+      "countryCode": "GUA",
+      "primaryLeagueId": 336,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga Portugal",
+      "countryCode": "POR",
+      "primaryLeagueId": 61,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga Portugal 2",
+      "countryCode": "POR",
+      "primaryLeagueId": 185,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga Profesional",
+      "countryCode": "ARG",
+      "primaryLeagueId": 112,
+      "count": 32
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga Super",
+      "countryCode": "MAS",
+      "primaryLeagueId": 8985,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Liga de Expansion MX Apertura",
+      "countryCode": "MEX",
+      "primaryLeagueId": 8976,
+      "count": 17
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ligat ha'Al",
+      "countryCode": "ISR",
+      "primaryLeagueId": 127,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ligue 1",
+      "countryCode": "ALG",
+      "primaryLeagueId": 516,
+      "count": 34
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ligue 2",
+      "countryCode": "FRA",
+      "primaryLeagueId": 110,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ligue 3",
+      "countryCode": "FRA",
+      "primaryLeagueId": 8970,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ligue I",
+      "countryCode": "TUN",
+      "primaryLeagueId": 544,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Lowland League East",
+      "countryCode": "SCO",
+      "primaryLeagueId": 9545,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Lowland League West",
+      "countryCode": "SCO",
+      "primaryLeagueId": 9545,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "MLS Next Pro - Conference - Quarter-finals",
+      "countryCode": "USA",
+      "primaryLeagueId": 10282,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "MLS Next Pro - Play-In Round",
+      "countryCode": "USA",
+      "primaryLeagueId": 10282,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "MTN8",
+      "countryCode": "RSA",
+      "primaryLeagueId": 9474,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Major League Soccer",
+      "countryCode": "USA",
+      "primaryLeagueId": 130,
+      "count": 47
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "NB I",
+      "countryCode": "HUN",
+      "primaryLeagueId": 212,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "NB II",
+      "countryCode": "HUN",
+      "primaryLeagueId": 9117,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "NM Kvinner",
+      "countryCode": "NOR",
+      "primaryLeagueId": 333,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "NPFL",
+      "countryCode": "NGA",
+      "primaryLeagueId": 533,
+      "count": 21
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "NWSL",
+      "countryCode": "USA",
+      "primaryLeagueId": 9134,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National Division",
+      "countryCode": "LUX",
+      "primaryLeagueId": 229,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League",
+      "countryCode": "ENG",
+      "primaryLeagueId": 117,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League Championship",
+      "countryCode": "NZL",
+      "primaryLeagueId": 8870,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League Cup Group A",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10705,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League Cup Group B",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10705,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League Cup Group C",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10705,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League Cup Group D",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10705,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League North",
+      "countryCode": "ENG",
+      "primaryLeagueId": 8944,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "National League South",
+      "countryCode": "ENG",
+      "primaryLeagueId": 8944,
+      "count": 26
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Northern Premier Division",
+      "countryCode": "ENG",
+      "primaryLeagueId": 8947,
+      "count": 43
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Northern Super League",
+      "countryCode": "CAN",
+      "primaryLeagueId": 10872,
+      "count": 3
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Persian Gulf",
+      "countryCode": "IRN",
+      "primaryLeagueId": 523,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier Division",
+      "countryCode": "IRL",
+      "primaryLeagueId": 126,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "ARM",
+      "primaryLeagueId": 118,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "AZE",
+      "primaryLeagueId": 262,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "BIH",
+      "primaryLeagueId": 267,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "BLR",
+      "primaryLeagueId": 263,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "CAN",
+      "primaryLeagueId": 9986,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "EGY",
+      "primaryLeagueId": 519,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "FRO",
+      "primaryLeagueId": 250,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "GHA",
+      "primaryLeagueId": 522,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "KAZ",
+      "primaryLeagueId": 225,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "KUW",
+      "primaryLeagueId": 529,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "RUS",
+      "primaryLeagueId": 63,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "SIN",
+      "primaryLeagueId": 461,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "TAN",
+      "primaryLeagueId": 9066,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "UKR",
+      "primaryLeagueId": 441,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League",
+      "countryCode": "WAL",
+      "primaryLeagueId": 116,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League 2",
+      "countryCode": "ENG",
+      "primaryLeagueId": 9084,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier League U18",
+      "countryCode": "ENG",
+      "primaryLeagueId": 10068,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premier Soccer League",
+      "countryCode": "RSA",
+      "primaryLeagueId": 537,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premiere Ligue",
+      "countryCode": "FRA",
+      "primaryLeagueId": 9677,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premiership",
+      "countryCode": "NIR",
+      "primaryLeagueId": 129,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premiership",
+      "countryCode": "SCO",
+      "primaryLeagueId": 64,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Premium liiga",
+      "countryCode": "EST",
+      "primaryLeagueId": 248,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera A",
+      "countryCode": "COL",
+      "primaryLeagueId": 274,
+      "count": 25
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera B",
+      "countryCode": "CHI",
+      "primaryLeagueId": 9126,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera B",
+      "countryCode": "COL",
+      "primaryLeagueId": 9125,
+      "count": 27
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera B Metropolitana",
+      "countryCode": "ARG",
+      "primaryLeagueId": 9213,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera Division - Apertura",
+      "countryCode": "SLV",
+      "primaryLeagueId": 335,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera Division Apertura",
+      "countryCode": "CRC",
+      "primaryLeagueId": 121,
+      "count": 15
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera División",
+      "countryCode": "BOL",
+      "primaryLeagueId": 144,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera División",
+      "countryCode": "CHI",
+      "primaryLeagueId": 273,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera División",
+      "countryCode": "VEN",
+      "primaryLeagueId": 339,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera Federacion - Group 1",
+      "countryCode": "ESP",
+      "primaryLeagueId": 8968,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera Federacion - Group 2",
+      "countryCode": "ESP",
+      "primaryLeagueId": 8968,
+      "count": 21
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Primera Nacional",
+      "countryCode": "ARG",
+      "primaryLeagueId": 8965,
+      "count": 36
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Pro League",
+      "countryCode": "UAE",
+      "primaryLeagueId": 538,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Prva Liga",
+      "countryCode": "MKD",
+      "primaryLeagueId": 249,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Prva Liga",
+      "countryCode": "SVN",
+      "primaryLeagueId": 173,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Qatar Stars League",
+      "countryCode": "QAT",
+      "primaryLeagueId": 535,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Regionalliga Bayern",
+      "countryCode": "GER",
+      "primaryLeagueId": 512,
+      "count": 26
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Regionalliga North",
+      "countryCode": "GER",
+      "primaryLeagueId": 512,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Regionalliga Northeast",
+      "countryCode": "GER",
+      "primaryLeagueId": 512,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Regionalliga Southwest",
+      "countryCode": "GER",
+      "primaryLeagueId": 512,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Regionalliga West",
+      "countryCode": "GER",
+      "primaryLeagueId": 512,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "SWF Scottish Cup - 2nd Round",
+      "countryCode": "SCO",
+      "primaryLeagueId": 11020,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "SWPL 1",
+      "countryCode": "SCO",
+      "primaryLeagueId": 10791,
+      "count": 10
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Saudi First Division",
+      "countryCode": "KSA",
+      "primaryLeagueId": 10721,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Saudi Pro League",
+      "countryCode": "KSA",
+      "primaryLeagueId": 536,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Second Division",
+      "countryCode": "QAT",
+      "primaryLeagueId": 11030,
+      "count": 5
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Second Professional League",
+      "countryCode": "BUL",
+      "primaryLeagueId": 9096,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Segunda Division",
+      "countryCode": "URU",
+      "primaryLeagueId": 9122,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Segunda Federacion - Group 1",
+      "countryCode": "ESP",
+      "primaryLeagueId": 9138,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Segunda Federacion - Group 2",
+      "countryCode": "ESP",
+      "primaryLeagueId": 9138,
+      "count": 21
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Segunda Federacion - Group 3",
+      "countryCode": "ESP",
+      "primaryLeagueId": 9138,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Segunda Federacion - Group 4",
+      "countryCode": "ESP",
+      "primaryLeagueId": 9138,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Segunda Federacion - Group 5",
+      "countryCode": "ESP",
+      "primaryLeagueId": 9138,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie A - Championship Round",
+      "countryCode": "ECU",
+      "primaryLeagueId": 246,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie A - Copa Sudamericana Play-off",
+      "countryCode": "ECU",
+      "primaryLeagueId": 246,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie A - Relegation Round",
+      "countryCode": "ECU",
+      "primaryLeagueId": 246,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie A Femminile",
+      "countryCode": "ITA",
+      "primaryLeagueId": 10178,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie B",
+      "countryCode": "ITA",
+      "primaryLeagueId": 86,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie C Grp. A",
+      "countryCode": "ITA",
+      "primaryLeagueId": 147,
+      "count": 21
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie C Grp. B",
+      "countryCode": "ITA",
+      "primaryLeagueId": 147,
+      "count": 21
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Serie C Grp. C",
+      "countryCode": "ITA",
+      "primaryLeagueId": 147,
+      "count": 21
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Southern Premier Division Central",
+      "countryCode": "ENG",
+      "primaryLeagueId": 8947,
+      "count": 41
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Southern Premier Division South",
+      "countryCode": "ENG",
+      "primaryLeagueId": 8947,
+      "count": 43
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Stars League",
+      "countryCode": "IRQ",
+      "primaryLeagueId": 524,
+      "count": 20
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super League",
+      "countryCode": "CHN",
+      "primaryLeagueId": 120,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super League",
+      "countryCode": "GRE",
+      "primaryLeagueId": 135,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super League",
+      "countryCode": "IDN",
+      "primaryLeagueId": 8983,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super League",
+      "countryCode": "SUI",
+      "primaryLeagueId": 69,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super League 2",
+      "countryCode": "GRE",
+      "primaryLeagueId": 8815,
+      "count": 17
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super Lig",
+      "countryCode": "TUR",
+      "primaryLeagueId": 71,
+      "count": 18
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super Liga",
+      "countryCode": "MDA",
+      "primaryLeagueId": 231,
+      "count": 8
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Super Liga",
+      "countryCode": "SRB",
+      "primaryLeagueId": 182,
+      "count": 14
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Superettan",
+      "countryCode": "SWE",
+      "primaryLeagueId": 168,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Superliga",
+      "countryCode": "ROU",
+      "primaryLeagueId": 189,
+      "count": 17
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Superliga",
+      "countryCode": "UZB",
+      "primaryLeagueId": 540,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Superligaen",
+      "countryCode": "DEN",
+      "primaryLeagueId": 46,
+      "count": 12
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Série A",
+      "countryCode": "BRA",
+      "primaryLeagueId": 268,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Série B",
+      "countryCode": "BRA",
+      "primaryLeagueId": 8814,
+      "count": 30
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Série C",
+      "countryCode": "BRA",
+      "primaryLeagueId": 8971,
+      "count": 4
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Série C - Final",
+      "countryCode": "BRA",
+      "primaryLeagueId": 8971,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Taca de Portugal",
+      "countryCode": "POR",
+      "primaryLeagueId": 186,
+      "count": 27
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Thai League",
+      "countryCode": "THA",
+      "primaryLeagueId": 8984,
+      "count": 16
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Thai League 2",
+      "countryCode": "THA",
+      "primaryLeagueId": 9498,
+      "count": 27
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Toppserien",
+      "countryCode": "NOR",
+      "primaryLeagueId": 331,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Tweede Divisie",
+      "countryCode": "NED",
+      "primaryLeagueId": 9195,
+      "count": 19
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Nations League A Grp. 3",
+      "countryCode": "INT",
+      "primaryLeagueId": 9806,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Nations League B Grp. 1",
+      "countryCode": "INT",
+      "primaryLeagueId": 9807,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Nations League C Grp. 1",
+      "countryCode": "INT",
+      "primaryLeagueId": 9808,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Nations League C Grp. 3",
+      "countryCode": "INT",
+      "primaryLeagueId": 9808,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Nations League C Grp. 4",
+      "countryCode": "INT",
+      "primaryLeagueId": 9808,
+      "count": 2
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Youth League - 1st Round",
+      "countryCode": "INT",
+      "primaryLeagueId": 9741,
+      "count": 11
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "UEFA Youth League - League Stage",
+      "countryCode": "INT",
+      "primaryLeagueId": 9741,
+      "count": 36
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "USL Championship",
+      "countryCode": "USA",
+      "primaryLeagueId": 8972,
+      "count": 29
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "USL League One",
+      "countryCode": "USA",
+      "primaryLeagueId": 9296,
+      "count": 22
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "USL Super League",
+      "countryCode": "USA",
+      "primaryLeagueId": 10699,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "V-League",
+      "countryCode": "VIE",
+      "primaryLeagueId": 9088,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Veikkausliiga Championship Group",
+      "countryCode": "FIN",
+      "primaryLeagueId": 51,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Veikkausliiga Qualification",
+      "countryCode": "FIN",
+      "primaryLeagueId": 52,
+      "count": 1
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Veikkausliiga Relegation Group",
+      "countryCode": "FIN",
+      "primaryLeagueId": 51,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Virsliga",
+      "countryCode": "LVA",
+      "primaryLeagueId": 226,
+      "count": 11
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "WE League",
+      "countryCode": "JPN",
+      "primaryLeagueId": 9500,
+      "count": 9
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "WSL",
+      "countryCode": "ENG",
+      "primaryLeagueId": 9227,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Women's League Cup",
+      "countryCode": "ENG",
+      "primaryLeagueId": 9717,
+      "count": 13
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Women's Premier Division",
+      "countryCode": "IRL",
+      "primaryLeagueId": 10210,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Women's World Cup Qualification UEFA Playoff",
+      "countryCode": "INT",
+      "primaryLeagueId": 10357,
+      "count": 32
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ykkonen Championship Group",
+      "countryCode": "FIN",
+      "primaryLeagueId": 8969,
+      "count": 6
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ykkonen Relegation Group",
+      "countryCode": "FIN",
+      "primaryLeagueId": 8969,
+      "count": 7
+    },
+    {
+      "reason": "OUTSIDE_EXISTING_COMPETITION_ALLOW_LIST",
+      "competition": "Ykkösliiga",
+      "countryCode": "FIN",
+      "primaryLeagueId": 251,
+      "count": 10
+    }
+  ],
+  "dailySources": [
+    {
+      "date": "20261006",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261006",
+      "sha256": "47e529eab428d230bd4eaeb5ed677e9d54959f3c3ff81b1cc797470cca141cf0",
+      "bytes": 82937
+    },
+    {
+      "date": "20261007",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261007",
+      "sha256": "02c97485d42dddcca06268d52c15e862666abe96ea249947479bea0a2a7e2ddd",
+      "bytes": 49028
+    },
+    {
+      "date": "20261008",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261008",
+      "sha256": "c744e5264480444281940565360a09e4056cfc6b33ccf4b307ca1b21f1cdaa31",
+      "bytes": 39925
+    },
+    {
+      "date": "20261009",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261009",
+      "sha256": "7bc331e04b3b098e76fa971ed7351d225d13889292b0a6837893c4d16b41f40f",
+      "bytes": 142235
+    },
+    {
+      "date": "20261010",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261010",
+      "sha256": "0156b5881906aedb81953e884ef241c1cc0cb19d64fab2eb159e7a55260d7ac8",
+      "bytes": 452834
+    },
+    {
+      "date": "20261011",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261011",
+      "sha256": "adb5eafadd20ce9ef8fea454d153ca1798d68a7803f24123540b3d073fe4f4d6",
+      "bytes": 321667
+    },
+    {
+      "date": "20261012",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261012",
+      "sha256": "62d51f0db511c1f23b2626f78ba566a84b31f647e42324d97d88461d7b225788",
+      "bytes": 86556
+    },
+    {
+      "date": "20261013",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261013",
+      "sha256": "b716e529f2ec69de9262143f1488add10e7b90d6df0e113edf4f2f9137a11ff6",
+      "bytes": 128522
+    },
+    {
+      "date": "20261014",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261014",
+      "sha256": "c11dbccd0beecaeee81228131156212c5b2436a1fc2a716d97dbeebaadc6e068",
+      "bytes": 100228
+    },
+    {
+      "date": "20261015",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261015",
+      "sha256": "fe13036f4de142a6a29a957c26f57281e40798281d05582903c3ac671de9ba3d",
+      "bytes": 64759
+    },
+    {
+      "date": "20261016",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261016",
+      "sha256": "7cbe6e125c16e635e15ef237695054a1fe27aa2bc64ed711285e631b44c25617",
+      "bytes": 128157
+    },
+    {
+      "date": "20261017",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261017",
+      "sha256": "b2dc72bde6a336b07c1633d9846c12d38d09f421ba696d7db1c9cab5dc911c29",
+      "bytes": 548713
+    },
+    {
+      "date": "20261018",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261018",
+      "sha256": "72d85d9aeeb5eb5746ce90b6e2e3d145b98979bb54f145ec66bc139e899102ce",
+      "bytes": 396763
+    },
+    {
+      "date": "20261019",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261019",
+      "sha256": "8515b9d35e716e83a672517190fab37663e023477b9a022f6f0e877f1645e394",
+      "bytes": 85430
+    },
+    {
+      "date": "20261020",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261020",
+      "sha256": "d3745a4e0b3f082168a1a0ba881da78f7fc31aba9228b0162268e9f31d946d34",
+      "bytes": 110678
+    },
+    {
+      "date": "20261021",
+      "url": "https://www.fotmob.com/api/data/matches?date=20261021",
+      "sha256": "b9e01429e99f4e64a68a378c9912514ec731f4ca3fa60ab28ab8353ebf7442fe",
+      "bytes": 98510
+    }
+  ],
+  "leagueFixtureReconciliation": [
+    {
+      "leagueId": 47,
+      "name": "Premier League",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/leagues?id=47",
+        "sha256": "5dfb8a6d57a66fde7499d29213570919aff03474e036cdb6d2a4d67377027415",
+        "bytes": 853035
+      },
+      "count": 20,
+      "matchIds": [
+        "fotmob:5795465",
+        "fotmob:5795466",
+        "fotmob:5795467",
+        "fotmob:5795471",
+        "fotmob:5795474",
+        "fotmob:5795473",
+        "fotmob:5795469",
+        "fotmob:5795470",
+        "fotmob:5795472",
+        "fotmob:5795468",
+        "fotmob:5795478",
+        "fotmob:5795476",
+        "fotmob:5795479",
+        "fotmob:5795481",
+        "fotmob:5795482",
+        "fotmob:5795475",
+        "fotmob:5795477",
+        "fotmob:5795480",
+        "fotmob:5795483",
+        "fotmob:5795484"
+      ]
+    },
+    {
+      "leagueId": 87,
+      "name": "LaLiga",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/leagues?id=87",
+        "sha256": "0bcb57c93af64ad29425b5f5771d50d80f16f4293da916708c2cd18e9efc3381",
+        "bytes": 839186
+      },
+      "count": 20,
+      "matchIds": [
+        "fotmob:5868086",
+        "fotmob:5868081",
+        "fotmob:5868084",
+        "fotmob:5868089",
+        "fotmob:5868083",
+        "fotmob:5868090",
+        "fotmob:5868082",
+        "fotmob:5868087",
+        "fotmob:5868085",
+        "fotmob:5868093",
+        "fotmob:5868094",
+        "fotmob:5868100",
+        "fotmob:5868091",
+        "fotmob:5868099",
+        "fotmob:5868097",
+        "fotmob:5868092",
+        "fotmob:5868096",
+        "fotmob:5868098",
+        "fotmob:5868095",
+        "fotmob:5868067"
+      ]
+    },
+    {
+      "leagueId": 53,
+      "name": "Ligue 1",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/leagues?id=53",
+        "sha256": "f0ea05cb4f379b8912476f4c244e7cef28628b24728bc007e9e2663210c2b699",
+        "bytes": 702607
+      },
+      "count": 18,
+      "matchIds": [
+        "fotmob:5802947",
+        "fotmob:5802948",
+        "fotmob:5802946",
+        "fotmob:5802949",
+        "fotmob:5802950",
+        "fotmob:5802952",
+        "fotmob:5802951",
+        "fotmob:5802953",
+        "fotmob:5802954",
+        "fotmob:5802957",
+        "fotmob:5802962",
+        "fotmob:5802958",
+        "fotmob:5802963",
+        "fotmob:5802955",
+        "fotmob:5802956",
+        "fotmob:5802959",
+        "fotmob:5802961",
+        "fotmob:5802960"
+      ]
+    },
+    {
+      "leagueId": 55,
+      "name": "Serie A",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/leagues?id=55",
+        "sha256": "afd854a658f58356af9207200d6df732163e71cfdb633b48ab48d597636d4387",
+        "bytes": 794939
+      },
+      "count": 20,
+      "matchIds": [
+        "fotmob:5749693",
+        "fotmob:5749694",
+        "fotmob:5749697",
+        "fotmob:5749692",
+        "fotmob:5749695",
+        "fotmob:5749696",
+        "fotmob:5749698",
+        "fotmob:5749691",
+        "fotmob:5749690",
+        "fotmob:5749699",
+        "fotmob:5749704",
+        "fotmob:5749709",
+        "fotmob:5749702",
+        "fotmob:5749701",
+        "fotmob:5749708",
+        "fotmob:5749703",
+        "fotmob:5749700",
+        "fotmob:5749705",
+        "fotmob:5749706",
+        "fotmob:5749707"
+      ]
+    },
+    {
+      "leagueId": 54,
+      "name": "Bundesliga",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/leagues?id=54",
+        "sha256": "631026be823e5e63cf11ddff5f094009bee8338dbf78ab7a40dad30de3ca12bf",
+        "bytes": 741138
+      },
+      "count": 18,
+      "matchIds": [
+        "fotmob:5881180",
+        "fotmob:5881179",
+        "fotmob:5881183",
+        "fotmob:5881184",
+        "fotmob:5881185",
+        "fotmob:5881187",
+        "fotmob:5881186",
+        "fotmob:5881181",
+        "fotmob:5881182",
+        "fotmob:5881191",
+        "fotmob:5881192",
+        "fotmob:5881193",
+        "fotmob:5881194",
+        "fotmob:5881195",
+        "fotmob:5881196",
+        "fotmob:5881189",
+        "fotmob:5881188",
+        "fotmob:5881190"
+      ]
+    }
+  ],
+  "eligibleMatches": [
+    {
+      "matchId": "fotmob:5881180",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-09T18:30:00.000Z",
+      "home": "Borussia Dortmund",
+      "away": "Werder Bremen",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881180",
+        "sha256": "11414f63b4b9453bbf26faac3196695a05c81b6ad83e46ecd1b09b9fcb77ae2c",
+        "bytes": 308638
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802947",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-09T18:45:00.000Z",
+      "home": "Lens",
+      "away": "Lyon",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802947",
+        "sha256": "628991aaf4574d024146af02ca52e4b19d56120888c5a0f58b9ef57b926e2cac",
+        "bytes": 275105
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868086",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-09T19:00:00.000Z",
+      "home": "Málaga",
+      "away": "Espanyol",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868086",
+        "sha256": "b6e5875144727625fa79cc9c7b002bdd220164dec31812f2e6e2da8d8cfca947",
+        "bytes": 266278
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795465",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-10T11:30:00.000Z",
+      "home": "Arsenal",
+      "away": "Leeds United",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795465",
+        "sha256": "1fcc211756c97c963cbd1eac8c6baff7f4187d882dec35a156426753863031ee",
+        "bytes": 312367
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749693",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-10T13:00:00.000Z",
+      "home": "Genoa",
+      "away": "Fiorentina",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749693",
+        "sha256": "48fa7e0643a11507c228c0b6c4ee066569d684e32a4399f3cdc566e45f586faf",
+        "bytes": 280086
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881179",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-10T13:30:00.000Z",
+      "home": "Augsburg",
+      "away": "Bayern München",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881179",
+        "sha256": "6914670bfae2694179ea5c2f52b94013acb1931ee303eb383e64f011620b31ba",
+        "bytes": 331402
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881183",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-10T13:30:00.000Z",
+      "home": "Hoffenheim",
+      "away": "Hamburger SV",
+      "homeScore": 2,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881183",
+        "sha256": "389b3c4b1b457eafa25a8a007d2945e943f1e86410f9079a69ab8c7fbd127c63",
+        "bytes": 296741
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881184",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-10T13:30:00.000Z",
+      "home": "Mainz 05",
+      "away": "Bayer Leverkusen",
+      "homeScore": 3,
+      "awayScore": 4,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881184",
+        "sha256": "ee642b14628e76ea669d7dce02527e223c01d264dc197f68ad0b5c069b2a4e91",
+        "bytes": 340327
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881185",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-10T13:30:00.000Z",
+      "home": "Paderborn",
+      "away": "VfB Stuttgart",
+      "homeScore": 0,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881185",
+        "sha256": "fe4ca7f930d7fff5a7872ede6c4ed597466c1c0c0ea3d4b3da27826f658b7915",
+        "bytes": 304886
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881187",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-10T13:30:00.000Z",
+      "home": "Union Berlin",
+      "away": "Elversberg",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881187",
+        "sha256": "0464fe6dbc121f39089d2128d5b75f724015b93a118fcda12aecf2a5a0db6939",
+        "bytes": 256388
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795466",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-10T14:00:00.000Z",
+      "home": "Aston Villa",
+      "away": "Brentford",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795466",
+        "sha256": "8153c912e88edf2599117aaebad5b823953260d0e826d777e1f8858d94992791",
+        "bytes": 344994
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795467",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-10T14:00:00.000Z",
+      "home": "Chelsea",
+      "away": "AFC Bournemouth",
+      "homeScore": 5,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795467",
+        "sha256": "635deafcaf58b2ea59dfc756e68eddc4a2bb5ecec5f8db8c6c1d7ab99db763ed",
+        "bytes": 308312
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795471",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-10T14:00:00.000Z",
+      "home": "Ipswich Town",
+      "away": "Fulham",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795471",
+        "sha256": "b843810035f34847dd470f153a9a67cb4586671c6fc60790c3b2526b81e52d24",
+        "bytes": 312937
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795474",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-10T14:00:00.000Z",
+      "home": "Sunderland",
+      "away": "Brighton & Hove Albion",
+      "homeScore": 0,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795474",
+        "sha256": "5cfa2e9b48849b0245a06db3d2aacb7da8338c6ec0afd09c39017fbb2eec8eef",
+        "bytes": 301152
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868081",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-10T14:15:00.000Z",
+      "home": "Deportivo Alavés",
+      "away": "Atlético Madrid",
+      "homeScore": 1,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868081",
+        "sha256": "7b62e02bae8f53539f1df3fb13e562f6366733459708bb09ba764385e181b243",
+        "bytes": 306226
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802948",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-10T15:15:00.000Z",
+      "home": "Lille",
+      "away": "Le Havre",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802948",
+        "sha256": "ff8fa00beda73c514d570c3301944d7d5006f012e0d20b089e7320cca4f7d481",
+        "bytes": 240431
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749694",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-10T16:00:00.000Z",
+      "home": "Inter",
+      "away": "Parma",
+      "homeScore": 3,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749694",
+        "sha256": "8e0444da4b15f475e0c63b090712f0e9476bc658b6570ba9b7cb1c00005296d8",
+        "bytes": 294300
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795473",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-10T16:30:00.000Z",
+      "home": "Manchester United",
+      "away": "Tottenham Hotspur",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795473",
+        "sha256": "3ec1d96e0f6eabab07190a49bb0c0437b181fbcc59ddb0b5689bbc5d6b72d35e",
+        "bytes": 325414
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868084",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-10T16:30:00.000Z",
+      "home": "Barcelona",
+      "away": "Getafe",
+      "homeScore": 3,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868084",
+        "sha256": "07ae3b90ad2e875487da740195efe70e953a14fdb0d8c2a10771ac9a10cabdf0",
+        "bytes": 294977
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881186",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-10T16:30:00.000Z",
+      "home": "RB Leipzig",
+      "away": "Eintracht Frankfurt",
+      "homeScore": 6,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881186",
+        "sha256": "70e2507d0e69f6b0a2ad0f0f59e484bc2e506fa6dc09d92cdefe0c2229ceb441",
+        "bytes": 319555
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749697",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-10T18:45:00.000Z",
+      "home": "Napoli",
+      "away": "Frosinone",
+      "homeScore": 3,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749697",
+        "sha256": "4a478fc4f923808c705ca58a60825d91cef5dd987b33b1827e360aa71cbb552d",
+        "bytes": 309656
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802946",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-10T18:45:00.000Z",
+      "home": "Brest",
+      "away": "Angers",
+      "homeScore": 5,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802946",
+        "sha256": "6f6c3306e88da1222968a7d52c82650e55b6f50c14cbc4c28d2f5ebffd9f02bf",
+        "bytes": 286975
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802949",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-10T18:45:00.000Z",
+      "home": "Lorient",
+      "away": "Paris FC",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802949",
+        "sha256": "3c47749b15c30532b35db0f55d8011a526ce3beece0d0ac237ad0629bc86fd7d",
+        "bytes": 254630
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802950",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-10T18:45:00.000Z",
+      "home": "Monaco",
+      "away": "Toulouse",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802950",
+        "sha256": "30ee3c9b14c454f8a46aec198255163f845c31d59751428b8cdf5813807e7b2b",
+        "bytes": 269008
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802952",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-10T18:45:00.000Z",
+      "home": "Paris Saint-Germain",
+      "away": "Le Mans",
+      "homeScore": 3,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802952",
+        "sha256": "6ce9f3db37ff6e188cd898003c13f1a1f7253a1ea5e7ae6e2fbe079023785c64",
+        "bytes": 302622
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868089",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-10T19:00:00.000Z",
+      "home": "Real Madrid",
+      "away": "Villarreal",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868089",
+        "sha256": "7e4a2c1d3802f7aa5580d46b21d4897e12151da6b6ef54eb9f53b8b02a35951f",
+        "bytes": 289622
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749692",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-11T10:30:00.000Z",
+      "home": "Como",
+      "away": "Roma",
+      "homeScore": 0,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749692",
+        "sha256": "b146d00eccd16d76ed0b5165de370c2f8c9f4de5200fc0ac7526ee441304e6d2",
+        "bytes": 275475
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868083",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-11T12:00:00.000Z",
+      "home": "Elche",
+      "away": "Celta Vigo",
+      "homeScore": 0,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868083",
+        "sha256": "a217596df03c48eb6325f4e14fa727f28d51b9f01e89f8e55ce0df1938173cca",
+        "bytes": 238684
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749695",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-11T13:00:00.000Z",
+      "home": "Lazio",
+      "away": "Monza",
+      "homeScore": 3,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749695",
+        "sha256": "a8d4bd45a6041bb2248278517f87c91160d5b1a45bab18e3238a796cb931e1e8",
+        "bytes": 290210
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749696",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-11T13:00:00.000Z",
+      "home": "Lecce",
+      "away": "Bologna",
+      "homeScore": 1,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749696",
+        "sha256": "ba498ed0b4d63e7754e06476743d0902877b8809048f3674729d03391751feaa",
+        "bytes": 282999
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795469",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-11T13:00:00.000Z",
+      "home": "Crystal Palace",
+      "away": "Nottingham Forest",
+      "homeScore": 3,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795469",
+        "sha256": "5620ec1089032343771a9509bb1e5cff4f3b0a1b87b116038ac9fe11ba613754",
+        "bytes": 348027
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795470",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-11T13:00:00.000Z",
+      "home": "Hull City",
+      "away": "Everton",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795470",
+        "sha256": "3c677eb1834571002508e894ac5d5dab8be31bdfcbe11ca617b7a44ac52a90b3",
+        "bytes": 313667
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802951",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-11T13:00:00.000Z",
+      "home": "Nice",
+      "away": "Strasbourg",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802951",
+        "sha256": "4a0b2edb27eede2b2e59c7820b8f3c2d7f4ff81af8e5549a3d0c66788860d1b7",
+        "bytes": 255627
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881181",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-11T13:30:00.000Z",
+      "home": "1. FC Köln",
+      "away": "Borussia Mönchengladbach",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881181",
+        "sha256": "aa1df4f746b0aae1a1fe81f14b99495481bad41b03dc7039865172b20b9ce11d",
+        "bytes": 306060
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868090",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-11T14:15:00.000Z",
+      "home": "Real Sociedad",
+      "away": "Deportivo A Coruña",
+      "homeScore": 3,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868090",
+        "sha256": "e792c7b579a556b3a3c530a7096a615d636b18d18641159b1863fbf307a0dc6d",
+        "bytes": 300931
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802953",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-11T15:15:00.000Z",
+      "home": "Rennes",
+      "away": "Auxerre",
+      "homeScore": 4,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802953",
+        "sha256": "2d24c0c0aaf7dae4c3be178eb191e0539da5c5099ab497f899b4e0302ac78926",
+        "bytes": 291850
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795472",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-11T15:30:00.000Z",
+      "home": "Liverpool",
+      "away": "Manchester City",
+      "homeScore": 0,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795472",
+        "sha256": "e2fc503013ffe96ce115f45d4c74266c8e361aff0968fb794fcf73d160b3f921",
+        "bytes": 338674
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881182",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-11T15:30:00.000Z",
+      "home": "Freiburg",
+      "away": "Schalke 04",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881182",
+        "sha256": "1bda3d0e8c350140e9517d0b71d5fd65ee3f8a0a0a71f003733a763c57edfdc2",
+        "bytes": 240260
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749698",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-11T16:00:00.000Z",
+      "home": "Sassuolo",
+      "away": "Milan",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749698",
+        "sha256": "0600d7fe7697bdc386a2d06dda38d27b97585990fc01fe6d2e1533f079cb99b9",
+        "bytes": 275499
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868082",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-11T16:30:00.000Z",
+      "home": "Real Betis",
+      "away": "Osasuna",
+      "homeScore": 5,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868082",
+        "sha256": "f85c8695b2c4b00ff20f7e5300f45432394327a021b2a8727846dbb8aa3c7fdb",
+        "bytes": 313680
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749691",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-11T18:45:00.000Z",
+      "home": "Cagliari",
+      "away": "Juventus",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749691",
+        "sha256": "33db3c92eabcdf38bc154890732563439dde3c97994e9813f60453316f99c9c4",
+        "bytes": 289790
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802954",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-11T18:45:00.000Z",
+      "home": "Troyes",
+      "away": "Marseille",
+      "homeScore": 0,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802954",
+        "sha256": "d2cc45433163d844bf6a73384508f2592fe5bb0f759ad49bdaa6ecb798e21ce4",
+        "bytes": 243717
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868087",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-11T19:00:00.000Z",
+      "home": "Racing Santander",
+      "away": "Valencia",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868087",
+        "sha256": "db4f580293dcf123e6584d10fe188484c5dd83d49af8f78cc65a82e6b801f3bf",
+        "bytes": 284944
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749690",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-12T16:30:00.000Z",
+      "home": "Atalanta",
+      "away": "Venezia",
+      "homeScore": 3,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749690",
+        "sha256": "e2d9d7f74c6960ccf40ac9d04dc096b382c20857cc1258f19a4e46e9f45c3568",
+        "bytes": 320138
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749699",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-12T18:45:00.000Z",
+      "home": "Torino",
+      "away": "Udinese",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749699",
+        "sha256": "7603cdd7107e8f12c31f6f9168f2db7183cf50abadbacacc240fc471bf0c514f",
+        "bytes": 283799
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795468",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-12T19:00:00.000Z",
+      "home": "Coventry City",
+      "away": "Newcastle United",
+      "homeScore": 4,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795468",
+        "sha256": "12540fa3fba4955e970c86e9cf0852f1f0b9665cfe7a82a0a2d890608d8f272f",
+        "bytes": 321698
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868085",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-12T19:00:00.000Z",
+      "home": "Levante",
+      "away": "Sevilla",
+      "homeScore": 3,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868085",
+        "sha256": "a73ad7073a51f814b0820634a6a43735fdef492ec1763cf3f13c7f0ee66c4ecf",
+        "bytes": 323440
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881191",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-16T18:30:00.000Z",
+      "home": "Eintracht Frankfurt",
+      "away": "1. FC Köln",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881191",
+        "sha256": "eea96572978e4caa7d22fb003061c67727e4ffde3c966ad0cdb3f7e9c2bc0df2",
+        "bytes": 253489
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749704",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-16T18:45:00.000Z",
+      "home": "Frosinone",
+      "away": "Sassuolo",
+      "homeScore": 4,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749704",
+        "sha256": "216ed0541fa169efa4c9a8a48d60f49fa83761b9d66edf7d68738222adcd217f",
+        "bytes": 309655
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802957",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-16T18:45:00.000Z",
+      "home": "Le Mans",
+      "away": "Toulouse",
+      "homeScore": 0,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802957",
+        "sha256": "ae84a93a8e4b4f6797843711fefad4f416433bf36134629c1fdfca4b54da81f3",
+        "bytes": 248010
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868093",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-16T19:00:00.000Z",
+      "home": "Deportivo A Coruña",
+      "away": "Levante",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868093",
+        "sha256": "27c0433a50dc624b97b1cf31d0a8325c2ec4e97b8702196cf351c590e518f63e",
+        "bytes": 258832
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795478",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-17T11:30:00.000Z",
+      "home": "Everton",
+      "away": "Chelsea",
+      "homeScore": 0,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795478",
+        "sha256": "1901415d0679af60ef75cff6f7b326deb1f9febbcdf9fc67c9db4c0228f23169",
+        "bytes": 309486
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868094",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-17T12:00:00.000Z",
+      "home": "Espanyol",
+      "away": "Atlético Madrid",
+      "homeScore": 0,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868094",
+        "sha256": "9abc10420156067b7c78f3ea75ae892ce074c259c40ac1ae4e2da7bfed7f3968",
+        "bytes": 300997
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749709",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-17T13:00:00.000Z",
+      "home": "Venezia",
+      "away": "Napoli",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749709",
+        "sha256": "66d9c5e8ec79e91858f18bd8a27e8d8906f6571ed19c6d0c06b00fa8176e3935",
+        "bytes": 305081
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881192",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-17T13:30:00.000Z",
+      "home": "Elversberg",
+      "away": "Augsburg",
+      "homeScore": 4,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881192",
+        "sha256": "4df0703011c569810c31430d901d44728dc5b41055ac31fc04203894c25b4c3b",
+        "bytes": 346422
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881193",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-17T13:30:00.000Z",
+      "home": "Hamburger SV",
+      "away": "VfB Stuttgart",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881193",
+        "sha256": "5e1335f0f701522b5b664b333bb2f66d69cb6973d152ffb5212cee03e1f914eb",
+        "bytes": 298871
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881194",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-17T13:30:00.000Z",
+      "home": "Schalke 04",
+      "away": "Mainz 05",
+      "homeScore": 0,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881194",
+        "sha256": "af28ba01a79c5702888376a853eeaa00da3a335558a76145d1215ac3c02e6812",
+        "bytes": 243641
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881195",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-17T13:30:00.000Z",
+      "home": "Union Berlin",
+      "away": "Borussia Dortmund",
+      "homeScore": 0,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881195",
+        "sha256": "791c7a02052bebf5b64f0027ad7ac14ec451ecdeb2d23efc583e3199d1ec8ec0",
+        "bytes": 253823
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881196",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-17T13:30:00.000Z",
+      "home": "Werder Bremen",
+      "away": "Paderborn",
+      "homeScore": 2,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881196",
+        "sha256": "b4d30d4f811cc8b7b2851fdc9643f71f93cd94a802be629cead2d2a7920327cc",
+        "bytes": 275960
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795476",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-17T14:00:00.000Z",
+      "home": "Brentford",
+      "away": "Liverpool",
+      "homeScore": 1,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795476",
+        "sha256": "e37c57417c0e47c86cf65e440b632fa80b83b7a3751cd0474f4e5d8e2462c16c",
+        "bytes": 336387
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795479",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-17T14:00:00.000Z",
+      "home": "Fulham",
+      "away": "Hull City",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795479",
+        "sha256": "88616fb70b7fd6c6f7dc72ed685b9a26ef77c9e9e86239b9771bfe9af823d9f8",
+        "bytes": 296828
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795481",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-17T14:00:00.000Z",
+      "home": "Manchester City",
+      "away": "Ipswich Town",
+      "homeScore": 3,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795481",
+        "sha256": "264452a7b7ce0ea474c6426d204d2f2b1d501e5c8db0bd6d0eb74c38f0a19a16",
+        "bytes": 322068
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868100",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-17T14:15:00.000Z",
+      "home": "Villarreal",
+      "away": "Elche",
+      "homeScore": 0,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868100",
+        "sha256": "cd0c395e8260dd0d33910ee186b9527dea4a1abb3a6f4fa3c9a68f2aac981577",
+        "bytes": 266583
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802962",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-17T15:15:00.000Z",
+      "home": "Strasbourg",
+      "away": "Paris Saint-Germain",
+      "homeScore": 1,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802962",
+        "sha256": "6fc58210ad8e6edad933ac7a0aee6270fd05d2f98ec4e6a035f64d47e6953d6a",
+        "bytes": 309387
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749702",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-17T16:00:00.000Z",
+      "home": "Bologna",
+      "away": "Inter",
+      "homeScore": 1,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749702",
+        "sha256": "f010a8748dccbd6adfbedc54bcf06eafefd010644fba733abfa8f86d60dccad1",
+        "bytes": 305750
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795482",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-17T16:30:00.000Z",
+      "home": "Newcastle United",
+      "away": "Aston Villa",
+      "homeScore": 0,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795482",
+        "sha256": "14f0df220217fa82c38a7e429db254ecf0d755a7b48a76dfc06f303673b2afb2",
+        "bytes": 330497
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868091",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-17T16:30:00.000Z",
+      "home": "Real Betis",
+      "away": "Barcelona",
+      "homeScore": 2,
+      "awayScore": 5,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868091",
+        "sha256": "6a941da6a51de660b9638a5277ff0be6c73d228fb04d2a0a9bcddacc24bf67a9",
+        "bytes": 304207
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881189",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-17T16:30:00.000Z",
+      "home": "Bayern München",
+      "away": "RB Leipzig",
+      "homeScore": 6,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881189",
+        "sha256": "1abd94a84deff12b5f39aeffb1bdfa993e19c50c87683b46ec0492d6154b1c8d",
+        "bytes": 345916
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749701",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-17T18:45:00.000Z",
+      "home": "Roma",
+      "away": "Genoa",
+      "homeScore": 2,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749701",
+        "sha256": "e6b80903745d8c255f91638d3c3c849b1bde6d9e496bf67e19c4460230646817",
+        "bytes": 278612
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802958",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-17T18:45:00.000Z",
+      "home": "Lille",
+      "away": "Brest",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802958",
+        "sha256": "d9544e2e431111e5b354a97a6c4083387555cf23d6468bc27be9eb81649d8627",
+        "bytes": 252508
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802963",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-17T18:45:00.000Z",
+      "home": "Troyes",
+      "away": "Lens",
+      "homeScore": 1,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802963",
+        "sha256": "579e7c3ca798e5d04b6d232d9daae94c304da782d489f50cf5961eca41cec22e",
+        "bytes": 267546
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868099",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-17T19:00:00.000Z",
+      "home": "Valencia",
+      "away": "Athletic Club",
+      "homeScore": 0,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868099",
+        "sha256": "b939975e6a7120b99bccbe5a80141b1db3475ae41fb2145b37fbf8fea48a7065",
+        "bytes": 274118
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749708",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-18T10:30:00.000Z",
+      "home": "Udinese",
+      "away": "Lecce",
+      "homeScore": 0,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749708",
+        "sha256": "793885ef00a5484c27412bad847069353e4438c9ab142f7357f0edafb8b4db20",
+        "bytes": 291191
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868097",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-18T12:00:00.000Z",
+      "home": "Osasuna",
+      "away": "Racing Santander",
+      "homeScore": 2,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868097",
+        "sha256": "97b3eaadb5de6c07f08cc9f341f3726f62cd0b75f98a59479187ec46b5a15f6f",
+        "bytes": 272809
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749703",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-18T13:00:00.000Z",
+      "home": "Fiorentina",
+      "away": "Como",
+      "homeScore": 1,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749703",
+        "sha256": "0650d57466de58d57aa5dc64ce4273c856006ff9f60f8a9754028c518e0a56aa",
+        "bytes": 303144
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795475",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-18T13:00:00.000Z",
+      "home": "AFC Bournemouth",
+      "away": "Sunderland",
+      "homeScore": 2,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795475",
+        "sha256": "c211179120d3d346533ea8eac7f45423e0e98319b67f138baba453b9840bd4bf",
+        "bytes": 322652
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795477",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-18T13:00:00.000Z",
+      "home": "Brighton & Hove Albion",
+      "away": "Crystal Palace",
+      "homeScore": 5,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795477",
+        "sha256": "8c3ec8b68fb28b0456eea03cdc2acb111f9d93e16e0a075c38dd5c7d51646c42",
+        "bytes": 322517
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795480",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-18T13:00:00.000Z",
+      "home": "Leeds United",
+      "away": "Manchester United",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795480",
+        "sha256": "f57cbb5b9e71341cf7bdd35f9ab4b96bca51ca330f958ce8fd1f3e91e9409166",
+        "bytes": 293320
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802955",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-18T13:00:00.000Z",
+      "home": "Angers",
+      "away": "Marseille",
+      "homeScore": 2,
+      "awayScore": 5,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802955",
+        "sha256": "ed6135b2b818832a0f657be14b68e57765ca536fd0564283eb7a582b09dc6d90",
+        "bytes": 297050
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881188",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-18T13:30:00.000Z",
+      "home": "Bayer Leverkusen",
+      "away": "Freiburg",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881188",
+        "sha256": "62ab7821af2d9015d92e37126ef5dfbe3675baf4a25c72b18d0e6ed11fdb4ccd",
+        "bytes": 273265
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868092",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-18T14:15:00.000Z",
+      "home": "Celta Vigo",
+      "away": "Deportivo Alavés",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868092",
+        "sha256": "359f9eef0db9a8bf532e1cc8e27c186d5514b640fab6364144ec18649519700d",
+        "bytes": 273362
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802956",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-18T15:15:00.000Z",
+      "home": "Le Havre",
+      "away": "Auxerre",
+      "homeScore": 1,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802956",
+        "sha256": "9ba28ec1ebbe9c2b69216ba87c37d3c2e6da49eae4694afe1fec25d8a370d8a9",
+        "bytes": 272358
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802959",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-18T15:15:00.000Z",
+      "home": "Lorient",
+      "away": "Monaco",
+      "homeScore": 1,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802959",
+        "sha256": "fb443f5567ceb31a168357541d96433b73b3b2c1db858a298778f7e4b6741a17",
+        "bytes": 253819
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802961",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-18T15:15:00.000Z",
+      "home": "Paris FC",
+      "away": "Rennes",
+      "homeScore": 4,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802961",
+        "sha256": "5d8e1bc41e7a66c129bd2e9457b34b5ee138e1adf2495512234244cee94e6044",
+        "bytes": 293409
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795483",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-18T15:30:00.000Z",
+      "home": "Nottingham Forest",
+      "away": "Arsenal",
+      "homeScore": 0,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795483",
+        "sha256": "3f1a53b9cb165eb4baadcf7f50e85ba9fcd6f95aa4f7d91fb662833b9951a837",
+        "bytes": 290887
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5881190",
+      "competition": "Bundesliga",
+      "primaryLeagueId": 54,
+      "countryCode": "GER",
+      "kickoff": "2026-10-18T15:30:00.000Z",
+      "home": "Borussia Mönchengladbach",
+      "away": "Hoffenheim",
+      "homeScore": 1,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881190",
+        "sha256": "4a1177973123fd49866baa8df6f0594a14190ed41d09216d3fc411a0a8312bed",
+        "bytes": 269182
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749700",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-18T16:00:00.000Z",
+      "home": "Milan",
+      "away": "Atalanta",
+      "homeScore": 3,
+      "awayScore": 2,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749700",
+        "sha256": "c0e43c0cb5ae32c5336253617296892cd5e26c5267684d5f23de9791fa949fe7",
+        "bytes": 292578
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868096",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-18T16:30:00.000Z",
+      "home": "Málaga",
+      "away": "Real Sociedad",
+      "homeScore": 2,
+      "awayScore": 5,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868096",
+        "sha256": "3a002cafa627545f06ed8318f45221cfd10690fb3a002c458e4f61c4501b5eda",
+        "bytes": 320945
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749705",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-18T18:45:00.000Z",
+      "home": "Juventus",
+      "away": "Lazio",
+      "homeScore": 0,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749705",
+        "sha256": "eee6dc5f5954112869d54a16f3515621b1c3138e605ebf3df1e7d104afd320cc",
+        "bytes": 275627
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5802960",
+      "competition": "Ligue 1",
+      "primaryLeagueId": 53,
+      "countryCode": "FRA",
+      "kickoff": "2026-10-18T18:45:00.000Z",
+      "home": "Lyon",
+      "away": "Nice",
+      "homeScore": 2,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5802960",
+        "sha256": "3cc9949a61756d3d053676573db410c1d7a591d16a7ef5b4715e46f9ff69b140",
+        "bytes": 259483
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868098",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-18T19:00:00.000Z",
+      "home": "Real Madrid",
+      "away": "Sevilla",
+      "homeScore": 4,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868098",
+        "sha256": "9955492de7c38ec67ef429d8f997ff3fa8741ef630077c8104d28757d3c2b766",
+        "bytes": 304827
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749706",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-19T16:30:00.000Z",
+      "home": "Monza",
+      "away": "Cagliari",
+      "homeScore": 4,
+      "awayScore": 0,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749706",
+        "sha256": "ecbf82032d16ec471b7b8431b7c12641947edd72218afc3894c38d76e72e37cc",
+        "bytes": 286699
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5749707",
+      "competition": "Serie A",
+      "primaryLeagueId": 55,
+      "countryCode": "ITA",
+      "kickoff": "2026-10-19T18:45:00.000Z",
+      "home": "Parma",
+      "away": "Torino",
+      "homeScore": 0,
+      "awayScore": 3,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749707",
+        "sha256": "8c667b8cfbd3c2b22b20d5d40cfe038a885a1413ea1d7d55ee548eb772c99ee8",
+        "bytes": 300231
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5795484",
+      "competition": "Premier League",
+      "primaryLeagueId": 47,
+      "countryCode": "ENG",
+      "kickoff": "2026-10-19T19:00:00.000Z",
+      "home": "Tottenham Hotspur",
+      "away": "Coventry City",
+      "homeScore": 3,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795484",
+        "sha256": "041377b22b0599c12dad9a4560e0d03a79ec0e84b90f9ee7530a5bb020822690",
+        "bytes": 323497
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868095",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-19T19:00:00.000Z",
+      "home": "Getafe",
+      "away": "Rayo Vallecano",
+      "homeScore": 1,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868095",
+        "sha256": "6acde04b375e622fa51b7da3398ef9ab709702c77a1cde3842a4bcd1cb3bbe8b",
+        "bytes": 300476
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    },
+    {
+      "matchId": "fotmob:5868067",
+      "competition": "LaLiga",
+      "primaryLeagueId": 87,
+      "countryCode": "ESP",
+      "kickoff": "2026-10-21T18:00:00.000Z",
+      "home": "Levante",
+      "away": "Athletic Club",
+      "homeScore": 3,
+      "awayScore": 1,
+      "finished": true,
+      "cancelled": false,
+      "eligibility": "ELIGIBLE",
+      "detailSource": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868067",
+        "sha256": "2f7e7b3a3e7152f1533a2e2425fcd89c81446cdd47d7558e91357440cdb27cf0",
+        "bytes": 304354
+      },
+      "reconciliation": "SCHEDULE_DETAIL_ID_TIME_SCORE_MATCH"
+    }
+  ],
+  "sourcePreflightSha256": "8d518e26ab7a9abbd4626c36c3f999a5d98fd379d49d0ff90b133a90ee3e47a3",
+  "calibrationArchive": {
+    "name": "blackbook-historical-calibration-v2-20260819.tar.zst",
+    "sha256": "e4eea5d38e32df77a17faf9f62873b7733cfcd45cf3873e179d823238cf52f79",
+    "allEightPartHashesVerified": true,
+    "all75PayloadHashesVerified": true
+  },
+  "provenanceNote": "Fresh FotMob JSON capture. Daily schedules, league fixture lists and match details were reconciled for match identity, kickoff and final score. URLs and hashes commit to the captured bytes; a later provider capture can differ. Raw provider payloads remain outside the repository."
+}
