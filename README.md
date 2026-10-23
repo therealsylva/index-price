@@ -98,6 +98,13 @@ runtime API while still making price formation inspectable and replayable.
 official sporting reference automatically. A verified sporting batch run by
 this calculator can produce the next reviewed reference publication.
 
+## Market price histories
+
+The [fixture-conditioned market history](market-history/README.md) adds full
+August 1–October 23 price files for the approved 15 clubs, 15 athletes and eight
+pairs. Sporting references and bands remain the canonical inputs; generation,
+context receipts, reconstruction conventions and checks are documented there.
+
 ## Verify and test
 
 ```sh

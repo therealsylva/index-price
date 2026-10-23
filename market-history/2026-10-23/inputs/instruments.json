@@ -1,0 +1,221 @@
+{
+  "clubs": [
+    [
+      "RMD",
+      "Real Madrid",
+      "club:3kq9cckrnlogidldtdie2fkbl",
+      8633
+    ],
+    [
+      "BAR",
+      "Barcelona",
+      "club:agh9ifb2mw3ivjusgedj7c3fe",
+      8634
+    ],
+    [
+      "MUN",
+      "Manchester United",
+      "club:6eqit8ye8aomdsrrq0hk3v7gh",
+      10260
+    ],
+    [
+      "PSG",
+      "Paris Saint-Germain",
+      "club:2b3mar72yy8d6uvat1ka6tn3r",
+      9847
+    ],
+    [
+      "MCI",
+      "Manchester City",
+      "club:a3nyxabgsqlnqfkeg41m6tnpp",
+      8456
+    ],
+    [
+      "LIV",
+      "Liverpool",
+      "club:c8h9bw1l82s06h77xxrelzhur",
+      8650
+    ],
+    [
+      "JUV",
+      "Juventus",
+      "club:bqbbqm98ud8obe45ds9ohgyrd",
+      9885
+    ],
+    [
+      "BAY",
+      "Bayern Munich",
+      "club:apoawtpvac4zqlancmvw4nk4o",
+      9823
+    ],
+    [
+      "CHE",
+      "Chelsea",
+      "club:9q0arba2kbnywth8bkxlhgmdr",
+      8455
+    ],
+    [
+      "ARS",
+      "Arsenal",
+      "club:4dsgumo7d4zupm2ugsvm4zm4d",
+      9825
+    ],
+    [
+      "TOT",
+      "Tottenham",
+      "club:22doj4sgsocqpxw45h607udje",
+      8586
+    ],
+    [
+      "ATM",
+      "Atlético Madrid",
+      "club:4ku8o6uf87yd8iecdalipo6wd",
+      9906
+    ],
+    [
+      "INT",
+      "Inter Milan",
+      "club:3vo5mpj7catp66nrwwqiuhuup",
+      8636
+    ],
+    [
+      "ACM",
+      "AC Milan",
+      "club:9dntj5dioj5ex52yrgwzxrq9l",
+      8564
+    ],
+    [
+      "BVB",
+      "Borussia Dortmund",
+      "club:dt4pinj0vw0t0cvz7za6mhmzy",
+      9789
+    ]
+  ],
+  "athletes": [
+    [
+      "LMY",
+      "Lamine Yamal",
+      "player:abr79wsl0folgkyvl821ggs2c",
+      1467236
+    ],
+    [
+      "MBP",
+      "Kylian Mbappé",
+      "player:5e9ilgrz3tzg9kd1gk3yvrahh",
+      701154
+    ],
+    [
+      "DEM",
+      "Ousmane Dembélé",
+      "player:ckaqxlw257qzj8vjdumvwbaad",
+      692984
+    ],
+    [
+      "RAPH",
+      "Raphinha",
+      "player:2wl6h1rlrfnn2mr65vuo3t815",
+      696679
+    ],
+    [
+      "HLD",
+      "Erling Haaland",
+      "player:atzboo800gv7gic2rgvgo0kq1",
+      737066
+    ],
+    [
+      "KANE",
+      "Harry Kane",
+      "player:b9g4qurpll4wizajo95c406hh",
+      194165
+    ],
+    [
+      "VJR",
+      "Vinícius Júnior",
+      "player:b4witgokm49tidm1a83qcvbop",
+      846033
+    ],
+    [
+      "BJL",
+      "Jude Bellingham",
+      "player:e83ula4wockmc2xid7185kcq2",
+      1077894
+    ],
+    [
+      "OLI",
+      "Michael Olise",
+      "player:m2c4lckkcr7yilnqxrrsgh2i",
+      1029063
+    ],
+    [
+      "BRUNO",
+      "Bruno Fernandes",
+      "player:3vtjjrqof5z2tjj84ehadqc45",
+      422685
+    ],
+    [
+      "ROD",
+      "Rodri",
+      "player:dqfk7czrayirrvonirtk2mk15",
+      675088
+    ],
+    [
+      "OSI",
+      "Victor Osimhen",
+      "player:1wynwp4x95o9w5tt4cdog6i1",
+      687681
+    ],
+    [
+      "MUS",
+      "Jamal Musiala",
+      "player:bhsdzppop8jwjsxwftizot1t6",
+      1156141
+    ],
+    [
+      "SAKA",
+      "Bukayo Saka",
+      "player:8tc7dcuwdeqbjgt7vw5p38xgq",
+      961995
+    ],
+    [
+      "PAL",
+      "Cole Palmer",
+      "player:dl10343h8yopcgerzur5samwa",
+      1096353
+    ]
+  ],
+  "pairs": [
+    [
+      "BAR",
+      "RMD"
+    ],
+    [
+      "MCI",
+      "MUN"
+    ],
+    [
+      "INT",
+      "ACM"
+    ],
+    [
+      "BAY",
+      "BVB"
+    ],
+    [
+      "ARS",
+      "CHE"
+    ],
+    [
+      "MBP",
+      "HLD"
+    ],
+    [
+      "MBP",
+      "LMY"
+    ],
+    [
+      "VJR",
+      "RAPH"
+    ]
+  ],
+  "referencePublication": "2026-10-22"
+}
