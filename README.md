@@ -6,11 +6,11 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current proposed publication is **22 October 2026, 00:00 UTC**: 12,346
-price rows and 12,305 cumulative movement records, including 2,840 new
-movements. It incorporates 96 eligible completed matches from 6 through 21
-October and recalculates 96 clubs and 1,542 players. All 96 matches have
-Extended coverage; 363 unresolved player appearances are held. The update is
+The current proposed publication is **26 October 2026, 00:00 UTC**: 12,349
+price rows and 13,661 cumulative movement records, including 1,356 new
+movements. It incorporates 46 eligible completed matches from 22 through 25
+October and recalculates 92 clubs and 1,264 players. All 46 matches have
+Extended coverage; 169 unresolved player appearances are held. The update is
 awaiting review in its pull request, and production publication remains
 disabled by policy.
 
