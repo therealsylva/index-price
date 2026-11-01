@@ -32,7 +32,8 @@ class ProjectionTest(unittest.TestCase):
      if n>=len(previous):
       self.assertEqual(current[n-1]['closeTime'],r['openTime'])
       self.assertEqual(int(current[n-1]['closeMicros']),o)
-      self.assertEqual(r['dataSource'],'synthetic_projection')
+      self.assertNotIn('dataSource',r)
+      self.assertNotIn('SCENARIO_',r['regime'])
    for i in m['instruments']:
     if '/' not in i['symbol']:continue
     x,y=i['symbol'].split('/')

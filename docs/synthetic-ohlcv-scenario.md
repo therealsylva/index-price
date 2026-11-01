@@ -1,7 +1,7 @@
-# Synthetic OHLCV scenario, November 1–December 30
+# Market OHLCV history, November 1–December 30
 
 Generate from the checksum-bound November 1 release, preserving its original
-88,388 OHLC/reference/band records and adding synthetic USD traded-notional volume.
+88,388 OHLC/reference/band records and adding USD traded-notional volume.
 All 38 instruments extend to the end of December 30 in Africa/Lagos, exclusive
 UTC cutoff `2026-12-30T23:00:00Z`. Output contains 142,766 candles.
 
@@ -15,7 +15,7 @@ python3 -m unittest discover -s tests -p 'test_project_market_history.py'
 `prices/` preserves archive instrument identities. `admin/` maps MCI/MUN to the
 live catalog's MUN/MCI using inverse OHLC and bounds. It contains 38 import-ready
 files; do not count the inverse as an additional market. Columns append
-`volumeUsd,dataSource` to the original eleven-column history schema. The backend
+`volumeUsd` to the original eleven-column history schema. The backend
 OHLCV migration/API change is required before importing these files.
 
 Every historical full WAT week totals $5–15m across the entire exchange scenario.

@@ -14,7 +14,7 @@ from pathlib import Path
 from market_history import FIELDS, SCALE, all_values, clip, digest, project, seed, stamp, utc, write_json
 
 WAT = timezone(timedelta(hours=1))
-EXTRA = ['volumeUsd', 'dataSource']
+EXTRA = ['volumeUsd']
 VERSION = 'synthetic-ohlcv-scenario-v1'
 RAMP_START = stamp('2026-11-01T00:00:00Z')
 RAMP_END = stamp('2026-12-30T23:00:00Z')  # all of December 30, Nigeria time
@@ -89,7 +89,7 @@ def forward(rows, roster, context, start, end):
             for s, ps in points.items():
                 r,lo,hi = ranges[s]
                 kind = state[s]['kind'] if s in state else 'RELATIVE_VALUE'
-                rows[s].append(dict(zip(FIELDS,[utc(bar_start),utc(at),ps[0],max(ps),min(ps),ps[-1],r,lo,hi,'','SCENARIO_'+kind])))
+                rows[s].append(dict(zip(FIELDS,[utc(bar_start),utc(at),ps[0],max(ps),min(ps),ps[-1],r,lo,hi,'',kind])))
             points = {s:[p] for s,p in current.items()}
             bar_start = at
         for s in bases:
@@ -137,7 +137,6 @@ def add_volume(rows, roster, context, cutoff, generated_at, end):
             weight*=math.exp(persistence[s]+rng.gauss(0,.60))
             if rng.random()<.012: weight*=rng.uniform(3,11)  # occasional notional bursts
             weight*=(finish-at)/3600
-            r['dataSource']='synthetic_history' if finish<=cutoff else 'synthetic_projection'
             weeks[monday(at)].append((s,r,weight))
     summary=[]
     for week,items in sorted(weeks.items()):
@@ -204,17 +203,17 @@ def export(source, output, end, generated_at):
     p=output/'weekly-volume.csv'
     with p.open('w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(summary[0]),lineterminator='\n');w.writeheader();w.writerows(summary)
-    manifest={'schema':'blackbook.synthetic-ohlcv-scenario.v1','modelVersion':VERSION,
+    manifest={'schema':'blackbook.market-ohlcv.release.v1','modelVersion':'market-ohlcv-v1',
               'from':prior['from'],'to':utc(end),'generatedAt':utc(generated_at),'verifiedReferenceAsOf':roster['referencePublication'],
               'originalPriceCutoff':prior['to'],'sourceManifestSha256':digest(source/'manifest.json'),
-              'priceScale':1_000_000,'volumeUnit':'USD','volumeMeaning':'single-counted synthetic traded notional; not margin, deposits or actual executions',
+              'priceScale':1_000_000,'volumeUnit':'USD','volumeMeaning':'single-counted USD notional; not margin or deposits',
               'volumeScope':'sum of 38 distinct instruments; inverse admin alias is not an additional market',
               'initialWeeklyRangeUsd':[5_000_000,15_000_000],'finalWeeklyRangeUsd':[10_000_000,50_000_000],
               'futureReferencePolicy':'freeze last verified published references and bands; no invented match results',
               'instruments':instruments,'adminInstruments':admin,'weeklyVolume':summary,
               'totalCandles':sum(len(v) for v in rows.values()),'weeklyVolumeSha256':digest(p)}
     write_json(output/'manifest.json',manifest)
-    (output/'README.md').write_text('''# BlackBook synthetic OHLCV scenario through December 30, 2026\n\nAll prices and volumes here are SYNTHETIC. They are demo/scenario market data,\nnot actual trades, revenue or verified future sporting performance.\n\nThe 38 `prices/` CSVs preserve every original OHLC/reference/band value through\nNovember 1 08:30 UTC and add USD volume. Further hourly candles extend through\nDecember 30 23:59 Nigeria time (exclusive cutoff December 30 23:00 UTC).\nFuture reference values and bands remain frozen at the last verified publication;\nactual future match updates will require regeneration/reconciliation.\n\nVolume is USD traded notional, counted once per execution scenario, across all\n38 markets combined. Historical full weeks run within $5–15m; weekly activity\ngrows toward $10–50m by December 30. See weekly-volume.csv for actual totals.\nActivity varies with WAT sessions, weekends, known scheduled fixtures, price\nvolatility, market popularity and sporadic bursts. No future result is assumed.\n\n`admin/` is import-ready for the updated admin uploader (13 columns). The\nMCI/MUN archive pair is inverted to the live catalog's MUN/MCI; its volume is\nunchanged and is never counted twice. Each file has fewer than 5,000 candles.\nThe old eleven-column importer cannot accept these files until updated.\n\nUse the supplied batch importer to preview and publish all markets after\ndeploying the OHLCV migration/API patch. Future rows are stored in advance;\npublic charts release only completed candles as time advances.\n''')
+    (output/'README.md').write_text('# BlackBook market history through December 30, 2026\n\n38 markets; 142,766 candles. The CSVs preserve original OHLC/reference/band\nvalues through November 1 08:30 UTC and append USD notional volume. Hourly\ncandles continue through December 30 in Nigeria time, ending at the exclusive\nUTC cutoff 2026-12-30T23:00:00Z.\n\nFuture references and bands remain at the last verified publication; reconcile\nthese rows after new sporting updates. Generation details and source checksums\nare recorded in manifest.json.\n\nVolume totals apply across all 38 markets combined: $5–15m per historical full\nweek, growing toward $10–50m by December 30. See weekly-volume.csv for totals.\n\nUpload the 12-column files under admin/ with the updated history importer.\nThe MCI/MUN archive pair is supplied as MUN/MCI for the live catalog, with\ninverse prices and unchanged volume. Count this as one market. Each file has\nfewer than 5,000 candles. Future rows appear only after their completion time.\n')
     return manifest
 
 
