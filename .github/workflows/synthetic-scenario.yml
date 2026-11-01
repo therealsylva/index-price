@@ -1,4 +1,4 @@
-name: Synthetic OHLCV scenario
+name: Market OHLCV history
 on:
   pull_request:
     paths:
@@ -20,5 +20,5 @@ jobs:
       - run: python3 tools/project_market_history.py --output scenario --generated-at 2026-11-01T19:00:00Z
       - uses: actions/upload-artifact@v4
         with:
-          name: BlackBook-synthetic-OHLCV-through-2026-12-30
+          name: BlackBook-market-OHLCV-through-2026-12-30
           path: scenario/
