@@ -114,7 +114,7 @@ def read_shards(directory, prefix):
 
 class Sources:
     def __init__(self, root=ROOT, inputs=DEFAULT / 'inputs'):
-        self.root, self.inputs = Path(root), Path(inputs)
+        self.root, self.inputs = Path(root).resolve(), Path(inputs).resolve()
         self.roster = json.loads((self.inputs / 'instruments.json').read_text())
         self.context = json.loads((self.inputs / 'context.json').read_text())
         self.names = {s: (n, e, i) for s, n, e, i in self.roster['clubs'] + self.roster['athletes']}
@@ -365,15 +365,30 @@ def all_values(values, bands, edges):
     return out, ranges
 
 
-def generate(sources, start, end):
-    if start != stamp('2026-08-01T00:00:00Z') or end <= start:
-        raise ValueError('history starts on August 1; end must be later')
+def generate(sources, start, end, initial_prices=None):
+    if start < stamp('2026-08-01T00:00:00Z') or end <= start:
+        raise ValueError('history cannot precede August 1; end must be later')
     if end > stamp(sources.context['capturedAt']):
         raise ValueError('end exceeds context capture')
     bands = dict(sources.bands)
-    values = {s: b[0] for s, b in bands.items()}
+    for at, entries in sorted(sources.events.items()):
+        if at <= start:
+            bands.update(entries)
+    values = {s: b[0] for s, b in bands.items()} if initial_prices is None else dict(initial_prices)
+    if set(values) != set(sources.names):
+        raise ValueError('initial prices must cover every base instrument')
+    for s, price in values.items():
+        if not bands[s][1] <= price <= bands[s][2]:
+            raise ValueError(f'initial price outside band: {s}')
+    for x, y in sources.edges:
+        _, lo, hi = pair_band(bands[x], bands[y])
+        if not lo <= SCALE * values[x] // values[y] <= hi:
+            raise ValueError('initial pair outside band')
     rngs = {s: random.Random(seed('fixture-history-v1|' + s)) for s in sources.names}
     z, velocity, noise = ({s: 0.0 for s in sources.names} for _ in range(3))
+    for s, value in values.items():
+        r, lo, hi = bands[s]
+        z[s] = (value - r) / (hi - r if value >= r else r - lo)
     regime_state = {}
     for s in sources.names:
         c = sources.context_at(s, start)
@@ -464,8 +479,27 @@ def generate(sources, start, end):
     return rows, audit
 
 
-def write_release(sources, output, start, end):
-    rows, audit = generate(sources, start, end)
+def write_release(sources, output, start, end, prefix=None):
+    prior_rows, initial = {}, None
+    if prefix is not None:
+        prefix = Path(prefix).resolve()
+        prior = json.loads((prefix / 'manifest.json').read_text())
+        if stamp(prior['to']) != start or {i['symbol'] for i in prior['instruments']} != set(sources.symbols):
+            raise ValueError('prefix cutoff or instruments mismatch')
+        sources.source_files.append(prefix / 'manifest.json')
+        for instrument in prior['instruments']:
+            path = prefix / instrument['path']
+            if digest(path) != instrument['sha256']:
+                raise ValueError('prefix checksum mismatch')
+            with path.open() as f:
+                prior_rows[instrument['symbol']] = list(csv.DictReader(f))
+            sources.source_files.append(path)
+        initial = {s: int(prior_rows[s][-1]['closeMicros']) for s in sources.names}
+    rows, audit = generate(sources, start, end, initial)
+    if prior_rows:
+        for symbol in rows:
+            rows[symbol] = prior_rows[symbol] + rows[symbol]
+        start = stamp(prior['from'])
     instruments = []
     for symbol, candles in rows.items():
         filename = symbol.replace('/', '-') + '.csv'
@@ -503,8 +537,9 @@ def main():
     parser.add_argument('--inputs', type=Path, default=DEFAULT / 'inputs')
     parser.add_argument('--from', dest='start', default='2026-08-01T00:00:00Z')
     parser.add_argument('--to', dest='end', default='2026-10-23T16:45:00Z')
+    parser.add_argument('--prefix', type=Path, help='Preserve a verified release and extend from its cutoff')
     args = parser.parse_args()
-    _, audit = write_release(Sources(inputs=args.inputs), args.output, stamp(args.start), stamp(args.end))
+    _, audit = write_release(Sources(inputs=args.inputs), args.output, stamp(args.start), stamp(args.end), args.prefix)
     print(json.dumps(audit, sort_keys=True))
 
 

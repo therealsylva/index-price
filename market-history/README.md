@@ -1,5 +1,11 @@
 # Fixture-conditioned market price history
 
+The latest [1 November release](2026-11-01/README.md) extends all 38 instruments
+through **1 November 2026 08:30 UTC**, preserving the entire 23 October imported
+prefix byte-for-byte. It contains 88,388 bars and follows the verified index
+updates through the 31 October matches. The description below documents the
+original release and shared model conventions.
+
 The [23 October release](2026-10-23/manifest.json) contains a separate complete
 price file for each approved launch instrument: **15 clubs, 15 athletes and 8
 pairs**, from **1 August 2026 00:00 UTC through 23 October 2026 16:45 UTC**.

@@ -12,9 +12,12 @@ from market_history import DEFAULT, ROOT, SCALE, Sources, generate, pair_band, p
 
 
 class MarketHistoryTests(unittest.TestCase):
+    release = DEFAULT
+    checkpoint_count = 150
+
     @classmethod
     def setUpClass(cls):
-        cls.sources = Sources()
+        cls.sources = Sources(inputs=cls.release / 'inputs')
 
     def test_exact_launch_roster_and_checkpoint_replay(self):
         s = self.sources
@@ -23,7 +26,7 @@ class MarketHistoryTests(unittest.TestCase):
         self.assertEqual(len(s.edges), 8)
         self.assertIn('ATM', s.names)
         self.assertNotIn(['RMD', 'LMY'], s.edges)
-        self.assertEqual(len(s.checkpoints), 150)
+        self.assertEqual(len(s.checkpoints), self.checkpoint_count)
         # Sources construction also verifies every reference chain and exact
         # saved density after replaying the recorded minutes for each batch.
         for row in s.checkpoints:
@@ -84,14 +87,14 @@ class MarketHistoryTests(unittest.TestCase):
         self.assertNotEqual(short['BAR'][-1]['closeMicros'], different['BAR'][-1]['closeMicros'])
 
     def test_release_hashes_full_coverage_ohlc_and_pair_endpoints(self):
-        manifest = json.loads((DEFAULT / 'manifest.json').read_text())
+        manifest = json.loads((self.release / 'manifest.json').read_text())
         self.assertEqual(len(manifest['instruments']), 38)
         for name, checksum in manifest['sourceFiles'].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), checksum, name)
-        self.assertEqual(hashlib.sha256((DEFAULT / 'anchors.json').read_bytes()).hexdigest(), manifest['anchorsSha256'])
+        self.assertEqual(hashlib.sha256((self.release / 'anchors.json').read_bytes()).hexdigest(), manifest['anchorsSha256'])
         by_symbol = {}
         for instrument in manifest['instruments']:
-            path = DEFAULT / instrument['path']
+            path = self.release / instrument['path']
             self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), instrument['sha256'])
             with path.open() as f:
                 rows = list(csv.DictReader(f))
