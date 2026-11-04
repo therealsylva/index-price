@@ -6,13 +6,14 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current proposed publication is **1 November 2026, 00:00 UTC**: 12,349
-price rows and 14,818 cumulative movement records, including 1,157 new
-movements. It incorporates 39 eligible completed matches from 26 through 31
-October and recalculates affected clubs and players. Daily schedules reconcile
-with league fixtures; all matches passed the source preflight. Unresolved
-player identities remain held. This candidate awaits pull-request review and
-has not been deployed to production.
+The current proposed publication is **4 November 2026, 00:00 UTC**: 12,349
+price rows and 15,435 cumulative movement records, including 617 new
+movements. It incorporates 21 eligible completed matches from 1 through 3
+November and recalculates 42 clubs and 575 players. Daily schedules reconcile
+with league fixtures; all matches passed the source preflight. The 83 unresolved
+player appearances remain held. Nine completed UEFA Champions League
+league-phase matches are excluded by the existing calculator allow-list.
+This candidate awaits pull-request review and has not been deployed to production.
 
 The existing calculator scope is the five top domestic leagues plus UEFA club
 qualification. UEFA league-phase matches, international matches and domestic
