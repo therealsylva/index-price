@@ -881,13 +881,7 @@
       },
       "timeTS": 1793562300000,
       "competition": "Serie A"
-    }
-  ],
-  "excludedCompetitions": {
-    "Champions League": "League-phase matches outside frozen calculator allow-list"
-  },
-  "completedExcludedMatches": 9,
-  "excludedMatches": [
+    },
     {
       "id": 6106341,
       "leagueId": 943230,
@@ -925,9 +919,7 @@
         }
       },
       "timeTS": 1793727900000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106335,
@@ -966,9 +958,7 @@
         }
       },
       "timeTS": 1793727900000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106266,
@@ -1008,9 +998,7 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106263,
@@ -1049,9 +1037,7 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106316,
@@ -1090,9 +1076,7 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106306,
@@ -1131,9 +1115,7 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106408,
@@ -1172,9 +1154,7 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106291,
@@ -1216,9 +1196,7 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     },
     {
       "id": 6106326,
@@ -1258,9 +1236,25 @@
         }
       },
       "timeTS": 1793736000000,
-      "competition": "Champions League",
-      "eligibility": "INELIGIBLE",
-      "reason": "League-phase matches outside frozen calculator allow-list"
+      "competition": "Champions League"
     }
-  ]
+  ],
+  "excludedCompetitions": {},
+  "completedExcludedMatches": 0,
+  "excludedMatches": [],
+  "coverageCorrection": {
+    "reason": "User confirmed UEFA main competition matches must be included. Qualification-only label matching incorrectly excluded all nine Champions League matches on 3 November.",
+    "restoredMatchIds": [
+      "fotmob:6106341",
+      "fotmob:6106335",
+      "fotmob:6106266",
+      "fotmob:6106263",
+      "fotmob:6106316",
+      "fotmob:6106306",
+      "fotmob:6106408",
+      "fotmob:6106291",
+      "fotmob:6106326"
+    ],
+    "earlierHistory": "Earlier accepted checkpoints are preserved; UEFA main-stage matches excluded before 1 November require a separate historical replay."
+  }
 }

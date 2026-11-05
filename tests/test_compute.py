@@ -3,7 +3,22 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.compute import load_batch_manifest, resolve_catalog_club, baseline_for
+from tools.compute import COMPETITION_IDS, load_batch_manifest, resolve_catalog_club, baseline_for, map_players_for_team
+
+
+class CompetitionCoverageTests(unittest.TestCase):
+    def test_uefa_main_competitions_share_qualification_identity(self):
+        for name, suffix in (("Champions League", "champions-league"),
+                             ("Europa League", "europa-league"),
+                             ("Conference League", "conference-league")):
+            with self.subTest(competition=name):
+                expected = "football:uefa:" + suffix
+                self.assertEqual(COMPETITION_IDS[name], expected)
+                self.assertEqual(COMPETITION_IDS[name + " Qualification"], expected)
+
+    def test_unrelated_competitions_remain_excluded(self):
+        for name in ("Club Friendlies", "FA Cup", "World Cup", "Championship"):
+            self.assertNotIn(name, COMPETITION_IDS)
 
 
 class BatchManifestTests(unittest.TestCase):
@@ -89,6 +104,12 @@ class ManualComparisonTests(unittest.TestCase):
         self.assertEqual(source, 'SNAPSHOT_CELL')
 
 class ClubIdentityTests(unittest.TestCase):
+    def test_sporting_cp_never_resolves_to_pisa(self):
+        clubs = [("pisa", "Pisa Sporting Club"),
+                 ("sporting", "Sporting Clube de Portugal")]
+        self.assertEqual(resolve_catalog_club("Sporting CP", clubs),
+                         (1.0, "sporting", "Sporting Clube de Portugal"))
+
     def test_alias_prevents_plausible_wrong_fuzzy_match(self):
         clubs = [
             ("braga", "Riga FC"),
@@ -103,6 +124,22 @@ class ClubIdentityTests(unittest.TestCase):
             (score, entity_id, registered),
             (1.0, "fotmob:8232", "SV Elversberg"),
         )
+
+
+class PlayerIdentityTests(unittest.TestCase):
+    def test_tied_surnames_are_held_in_both_candidate_orders(self):
+        player = {"id": 1180547, "name": "Souleymane Touré", "stats": []}
+        candidates = [{"player_id": "a", "player_name": "I. Touré", "last_name": "Touré"},
+                      {"player_id": "b", "player_name": "Z. Touré", "last_name": "Touré"}]
+        for order in (candidates, list(reversed(candidates))):
+            self.assertEqual(map_players_for_team([player], order, {}, {}), {})
+
+    def test_unique_full_name_is_still_resolved(self):
+        player = {"id": 1, "name": "Lamine Yamal", "stats": []}
+        candidates = [{"player_id": "lamine", "player_name": "Lamine Yamal"},
+                      {"player_id": "other", "player_name": "Other Player"}]
+        mapped = map_players_for_team([player], candidates, {}, {})
+        self.assertEqual(mapped["1"][0], "lamine")
 
 
 if __name__ == "__main__":
