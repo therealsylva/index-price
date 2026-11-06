@@ -1,5 +1,9 @@
 # Market structure scenario: November 5–December 30, 2026
 
+Superseded by [the continuous November 6 release](../2026-11-06/README.md).
+This original scenario independently initialized prices at November 5 and can
+introduce a price discontinuity when appended to the earlier archive.
+
 38 import-ready CSVs under `admin/`, with 1,344 hourly candles per market
 (51,072 total). Coverage starts at midnight **November 5 in Africa/Lagos**,
 `2026-11-04T23:00:00Z`, and ends at midnight December 31 in that timezone,

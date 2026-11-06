@@ -1,5 +1,11 @@
 # Fixture-conditioned market price history
 
+For forward CSVs through December 30, use the
+[November 6 continuous release](2026-11-06/README.md). It joins the verified
+November 1 archive and applies the merged November 4 bands chronologically.
+The November 5 scenario is superseded because it independently initialized
+its opening prices.
+
 The latest [1 November release](2026-11-01/README.md) extends all 38 instruments
 through **1 November 2026 08:30 UTC**, preserving the entire 23 October imported
 prefix byte-for-byte. It contains 88,388 bars and follows the verified index
