@@ -6,20 +6,24 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current proposed publication is **1 November 2026, 00:00 UTC**: 12,349
-price rows and 14,818 cumulative movement records, including 1,157 new
-movements. It incorporates 39 eligible completed matches from 26 through 31
-October and recalculates affected clubs and players. Daily schedules reconcile
-with league fixtures; all matches passed the source preflight. Unresolved
-player identities remain held. This candidate awaits pull-request review and
-has not been deployed to production.
+The current proposed publication is **4 November 2026, 00:00 UTC**. It
+includes all 30 completed matches in the declared 1–3 November window: 21
+top-five domestic league matches and nine Champions League matches. The dated
+summary and receipt record 60 club and 835 player recalculations: 895 new
+movements, 15,713 cumulative movements and 12,351 price rows. The 104 unresolved
+player appearances remain held.
+This candidate awaits pull-request review and has not been deployed to production.
 
-The existing calculator scope is the five top domestic leagues plus UEFA club
-qualification. UEFA league-phase matches, international matches and domestic
-cups remain outside that allow-list. The dated update includes source-discovery
-and preflight audits reconciling daily results, league fixture lists, match
-identities, kickoff times, scores, goal timelines and player-stat availability.
-Raw provider payloads remain outside this repository.
+The calculator covers the five top domestic leagues and all stages of the
+Champions League, Europa League and Conference League, including qualification.
+International matches, domestic cups and friendlies remain outside its scope.
+The dated update includes source-discovery and preflight audits reconciling
+results, match identities, kickoff times, scores, goal timelines and player
+statistics. Raw provider payloads remain outside this repository.
+
+This correction restores the nine UEFA matches omitted from this PR's window.
+Earlier accepted checkpoints retain their original history; they have not been
+replayed to backfill UEFA main-stage games excluded before 1 November.
 
 ## Update prices
 

@@ -1,0 +1,300 @@
+{
+  "schema": "blackbook.index.source-preflight.v1",
+  "status": "PASS",
+  "from": "2026-11-01T00:00:00.000000Z",
+  "asOf": "2026-11-04T00:00:00.000000Z",
+  "matches": 30,
+  "competitionCounts": {
+    "Premier League": 2,
+    "LaLiga": 5,
+    "Ligue 1": 5,
+    "Serie A": 7,
+    "Bundesliga": 2,
+    "Champions League": 9
+  },
+  "checks": [
+    "DAILY_SCHEDULE_EQUALS_LEAGUE_FIXTURES",
+    "MATCH_ID_TIME_SCORE_RECONCILIATION",
+    "GOAL_TIMELINE_EQUALS_FINAL_SCORE",
+    "ELEVEN_STARTERS_PER_TEAM",
+    "ACTIVE_PLAYER_STATS_AND_MINUTES",
+    "FINITE_STAT_VALUES",
+    "TEAM_SHOTS_ON_TARGET_PRESENT",
+    "UEFA_NOV3_RESULTS_RECONCILED_WITH_UEFA_FIXTURE_LIST"
+  ],
+  "matchChecks": [
+    {
+      "matchId": "fotmob:5749731",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 3,
+      "detailSha256": "ae50b4f23b893968c19873f9920c34125d19bfa8155317e599e61d896c48031e"
+    },
+    {
+      "matchId": "fotmob:5749733",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 1,
+      "detailSha256": "d4ad7bde21668da308a646129cc06d5aa56363d8eddee1f80a17371109b54965"
+    },
+    {
+      "matchId": "fotmob:5749734",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 2,
+      "detailSha256": "652bc517af05a5bfe5a32ce3e312b325d960983be77e04f8a5ce41857bfcd88e"
+    },
+    {
+      "matchId": "fotmob:5749735",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 2,
+      "detailSha256": "1e97d34ee4276717a1e4804fb479d9b95f9dad11f5d146f8ab9ad7dda22a40ac"
+    },
+    {
+      "matchId": "fotmob:5749736",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3,
+      "detailSha256": "085ac3a4a849fe75ffdf0fb668a9e9f049b267c12c5ee20840b5091d13b8b7c7"
+    },
+    {
+      "matchId": "fotmob:5749737",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3,
+      "detailSha256": "4364e3e008f9270ed3ac9a0d62e1152960cd354014c1c62a4e06d6d8c193a3d6"
+    },
+    {
+      "matchId": "fotmob:5749738",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 6,
+      "detailSha256": "9d00d9cfac28f701a381281e909edcf0fe08c7c499252d195af5f01666cf343e"
+    },
+    {
+      "matchId": "fotmob:5795501",
+      "competition": "Premier League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 1,
+      "detailSha256": "950f61d05720a0bfb82d72187f4000183928eb731a56c9da9850dbca4141acad"
+    },
+    {
+      "matchId": "fotmob:5795503",
+      "competition": "Premier League",
+      "status": "PASS",
+      "activePlayers": 30,
+      "goalEvents": 1,
+      "detailSha256": "45fa3d72f8fabde39721497a2aa54a861bef058270b3af21572cd1a5c9e3f101"
+    },
+    {
+      "matchId": "fotmob:5802975",
+      "competition": "Ligue 1",
+      "status": "PASS",
+      "activePlayers": 30,
+      "goalEvents": 2,
+      "detailSha256": "838dcda86c9c01c9a935451f69aa41125b007e15296f852205c6face9a7897a5"
+    },
+    {
+      "matchId": "fotmob:5802976",
+      "competition": "Ligue 1",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 2,
+      "detailSha256": "ba39db4a6994c4f6bff3dc019f3aee036898e39551a05545212fb22a43c3af46"
+    },
+    {
+      "matchId": "fotmob:5802977",
+      "competition": "Ligue 1",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 2,
+      "detailSha256": "5c144b43e6bcd2d8fa1cd0634164c6f3189fcf1795da495cebbc2f37b19f3a42"
+    },
+    {
+      "matchId": "fotmob:5802979",
+      "competition": "Ligue 1",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 4,
+      "detailSha256": "77637c3957c9291cfbd1950ce0c073e4f024882111b2b7f3f76649a05798c584"
+    },
+    {
+      "matchId": "fotmob:5802980",
+      "competition": "Ligue 1",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 6,
+      "detailSha256": "803343ae3f0c26d08b6e489173077780adc2c0702a85fc1dc348ee67444634df"
+    },
+    {
+      "matchId": "fotmob:5868111",
+      "competition": "LaLiga",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3,
+      "detailSha256": "20578f3d0ebbb404bbc7784ccffde8e4c486c26f81b8ecda7d48140932c5a6f7"
+    },
+    {
+      "matchId": "fotmob:5868113",
+      "competition": "LaLiga",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 3,
+      "detailSha256": "53fe7963d5b4867e13f775c9d2f82a170ff7b768a0b4a595c0c1d369601cf36a"
+    },
+    {
+      "matchId": "fotmob:5868114",
+      "competition": "LaLiga",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 1,
+      "detailSha256": "7849b1f9b6b7f7673fd07ea446dd6409e727707e906cb8ee8283f5550743bfd0"
+    },
+    {
+      "matchId": "fotmob:5868116",
+      "competition": "LaLiga",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 4,
+      "detailSha256": "ca8b51e5236b9fc04ad0eef423d39b6ce2dc3a0c77242b9782a4619215f1add4"
+    },
+    {
+      "matchId": "fotmob:5868118",
+      "competition": "LaLiga",
+      "status": "PASS",
+      "activePlayers": 30,
+      "goalEvents": 3,
+      "detailSha256": "4a03d9e04625634f9437c19afa0e24a69be64d9ac96edf2b18161d36ffde9f7b"
+    },
+    {
+      "matchId": "fotmob:5881210",
+      "competition": "Bundesliga",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 4,
+      "detailSha256": "c1dd43a51e0254ab1225079b0a8f137338f5fdd2ce9ef2ebcd6c6a27740df24c"
+    },
+    {
+      "matchId": "fotmob:5881213",
+      "competition": "Bundesliga",
+      "status": "PASS",
+      "activePlayers": 30,
+      "goalEvents": 2,
+      "detailSha256": "213bbb8c2403c92a28492a87da1b3732f3b5d8fa07dcfe0fe23865ccbdf47d26"
+    },
+    {
+      "matchId": "fotmob:6106263",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3,
+      "detailSha256": "63dc7e811386bd5c3a2f0fea5543b51e85444e7567af6e4ac1d5f4a6c73a1134"
+    },
+    {
+      "matchId": "fotmob:6106266",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 30,
+      "goalEvents": 2,
+      "detailSha256": "b45adab29112babee206d185224c3f4ac793049c608af78afc89d4d0207c4806"
+    },
+    {
+      "matchId": "fotmob:6106291",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 5,
+      "detailSha256": "90d5ea891bf2ab474d299eb5b17df0fe93cd7c05342a418d4a4c262a0cd91f36"
+    },
+    {
+      "matchId": "fotmob:6106306",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3,
+      "detailSha256": "fd6244f17a2632af7d89880c393f2c4a6e1fa185517c3ace94d1e9426c82c529"
+    },
+    {
+      "matchId": "fotmob:6106316",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 28,
+      "goalEvents": 0,
+      "detailSha256": "4a8ad39b90a8379a04304cbd12cc528faaf3bf1b7d3d40968f76984e2623c435"
+    },
+    {
+      "matchId": "fotmob:6106326",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 6,
+      "detailSha256": "09c7dacf85d15cc236fb3993d017d8ec5fca746dbb145766acd67d5ee3286172"
+    },
+    {
+      "matchId": "fotmob:6106335",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 1,
+      "detailSha256": "bb7e6108a8dec9ca1d6e77c5c0e3a5850ad932bb06f3592044964ccf68aeeed8"
+    },
+    {
+      "matchId": "fotmob:6106341",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 2,
+      "detailSha256": "bff5c1c46e3f73ced9ddf8b604093ef99e63200a94e58364ca86086adbd738e5"
+    },
+    {
+      "matchId": "fotmob:6106408",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 4,
+      "detailSha256": "67eb8308f66464944fea46b7cd98b116716d9a4f63d1e0b2330b5452c2a230bb"
+    }
+  ],
+  "refetchedPayloadRevisions": [
+    {
+      "matchId": "fotmob:5795503",
+      "previousSha256": "9b3da434fcc0b543849f6e8ae8bc269d88f9d4afe120066310f5ce2070e12d63",
+      "refetchedSha256": "45fa3d72f8fabde39721497a2aa54a861bef058270b3af21572cd1a5c9e3f101"
+    },
+    {
+      "matchId": "fotmob:5868113",
+      "previousSha256": "c392d8995d82332386335e2a40c8635285ace1d22d72919b533e00b4358bac4b",
+      "refetchedSha256": "53fe7963d5b4867e13f775c9d2f82a170ff7b768a0b4a595c0c1d369601cf36a"
+    },
+    {
+      "matchId": "fotmob:5802975",
+      "previousSha256": "4522d57370142e965b3371d454f660646b45802b173192bb363e85edc17b8c27",
+      "refetchedSha256": "838dcda86c9c01c9a935451f69aa41125b007e15296f852205c6face9a7897a5"
+    },
+    {
+      "matchId": "fotmob:5749738",
+      "previousSha256": "a4ecddd7b5840f9e1d1c9f41b157769c9b0883850292704b2e3d9beb1669fc8d",
+      "refetchedSha256": "9d00d9cfac28f701a381281e909edcf0fe08c7c499252d195af5f01666cf343e"
+    },
+    {
+      "matchId": "fotmob:5749731",
+      "previousSha256": "8442849929d9f8fdb44e26f66b9409bb7a628d9006c3ff57b7d85fb67132816d",
+      "refetchedSha256": "ae50b4f23b893968c19873f9920c34125d19bfa8155317e599e61d896c48031e"
+    },
+    {
+      "matchId": "fotmob:5802979",
+      "previousSha256": "23648e006b66068d7c3db28d8e725aa7ef7f135d4d145a0bd4ae666d7a86e422",
+      "refetchedSha256": "77637c3957c9291cfbd1950ce0c073e4f024882111b2b7f3f76649a05798c584"
+    }
+  ],
+  "independentUefaResults": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/"
+}

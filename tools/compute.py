@@ -54,8 +54,11 @@ COMPETITION_IDS = {
     "Ligue 1": "football:fra:ligue-1",
     "Serie A": "football:ita:serie-a",
     "Bundesliga": "football:deu:bundesliga",
+    "Champions League": "football:uefa:champions-league",
     "Champions League Qualification": "football:uefa:champions-league",
+    "Europa League": "football:uefa:europa-league",
     "Europa League Qualification": "football:uefa:europa-league",
+    "Conference League": "football:uefa:conference-league",
     "Conference League Qualification": "football:uefa:conference-league",
 }
 
@@ -122,6 +125,8 @@ CLUB_ALIASES = {
     "racing santander": "real racing club",
     "rennes": "stade rennais fc",
     "fenerbahce": "fenerbahce spor kulubu",
+    "feyenoord": "feyenoord rotterdam",
+    "galatasaray": "galatasaray spor kulubu",
     "gent": "kaa gent",
     "hoffenheim": "tsg 1899 hoffenheim",
     "kups": "kuopion palloseura",
@@ -131,6 +136,9 @@ CLUB_ALIASES = {
     "ofi crete": "ofi fc",
     "rapid wien": "sk rapid",
     "rb leipzig": "rasenballsport leipzig",
+    "roma": "as roma",
+    "sporting cp": "sporting clube de portugal",
+    "vfb stuttgart": "vfb stuttgart 1893",
 }
 
 # Clubs whose current registered ID is present in the frozen catalog but whose
@@ -535,7 +543,9 @@ def player_name_score(fotmob_name, candidate, shirt, minutes):
 
 def map_players_for_team(fplayers, candidates, player_info, meta):
     pairs = []
+    ambiguous = set()
     for fp in fplayers:
+        player_pairs = []
         fstats = flatten_stats(fp)
         minutes = int(round(sval(fstats, "minutes_played", 0)))
         fm = meta.get(str(fp.get("id")), {})
@@ -545,10 +555,17 @@ def map_players_for_team(fplayers, candidates, player_info, meta):
             candidate = dict(c)
             candidate.update(info)
             score = player_name_score(fp.get("name", ""), candidate, fm.get("shirt"), minutes)
-            pairs.append((score, str(fp.get("id")), pid, c))
+            player_pairs.append((score, str(fp.get("id")), pid, c))
+        ranked = sorted(player_pairs, key=lambda x: x[0], reverse=True)
+        # A provider's object order must never choose between tied identities.
+        # Retain the appearance as unmapped instead of guessing a catalog ID.
+        if (len(ranked) > 1 and ranked[0][0] >= 55
+                and math.isclose(ranked[0][0], ranked[1][0], abs_tol=1e-9)):
+            ambiguous.add(str(fp.get("id")))
+        pairs.extend(player_pairs)
     assigned_fb, assigned_opta, output = set(), set(), {}
     for score, fid, pid, row in sorted(pairs, reverse=True, key=lambda x: x[0]):
-        if score < 55 or fid in assigned_fb or pid in assigned_opta:
+        if score < 55 or fid in ambiguous or fid in assigned_fb or pid in assigned_opta:
             continue
         assigned_fb.add(fid)
         assigned_opta.add(pid)
