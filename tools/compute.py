@@ -162,6 +162,7 @@ CLUB_ID_OVERRIDES = {
 # and every later batch resolves it from that saved state.
 PROVIDER_CLUB_ONBOARDING = {
     "elversberg": ("fotmob:8232", "SV Elversberg"),
+    "torreense": ("fotmob:212820", "Torreense"),
 }
 
 PLAYER_WEIGHTS = {

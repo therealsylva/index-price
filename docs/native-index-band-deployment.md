@@ -1,20 +1,31 @@
 # Apply the verified index release to the native backend
 
-This operator helper applies the corrected November 4, 2026 release (sporting
-coverage through November 3) to the actual native PostgreSQL data and active
+This operator helper applies the verified November 15, 2026 release (93 new eligible matches; sporting
+coverage through November 8) to the actual native PostgreSQL data and active
 trading contracts. It does not read or import market-history CSVs.
 
 Run the pinned helper from a checkout/archive containing football/current.json
-and football/2026-11-04. The deployed native backend must be available at
+and football/2026-11-15. The deployed native backend must be available at
 /opt/blackbook/index-backend; /etc/blackbook/native.json supplies DATABASE_URL
 and the existing internal API/runtime tokens. No Supabase data key is required.
 
 ```sh
-/usr/local/bin/node tools/apply_native_index_release.mjs . /opt/blackbook/index-backend
-systemctl restart blackbook-api
+bash tools/deploy_native_index_release.sh
 ```
 
-The helper validates the 12,351 price rows and 15,713 movement records before
+The wrapper verifies the publication and native contract tests, pauses the maker,
+applies the normal publication lifecycle, restarts the API and checks the served
+catalog date. It restores the maker on success or failure. A failed or interrupted
+application can be resumed by rerunning the same pinned release; it must not be
+worked around by deleting state. The maker's separate timeout-progress fix should
+be installed first.
+
+The planner changes 33 of the 38 contracts from the verified November 4 baseline;
+unchanged contracts remain untouched. The existing CSV-pricing adapter clamps
+execution marks inside each current band with quote room on both sides. No CSV
+history is imported, regenerated or rewritten by this deployment.
+
+The helper validates the 12,405 price rows and 18,463 movement records before
 writing. It plans base and pair bands from the verified snapshot, validates each
 correction with the backend's normal market-publication validator, and checks
 the current runtime version/hash fences for all 38 markets.
@@ -51,5 +62,5 @@ BLACKBOOK_NATIVE_BACKEND_ROOT=/opt/blackbook/index-backend \
 Tests cover exact base/pair bands, version fences, live/newer-source rejection,
 partial/no-op retries, official-feed-before-queue ordering, runtime preflight,
 pending timeout and final matching-engine verification. This helper applies
-the reviewed release; it does not fetch/process additional November 4–6 matches
-or migrate the separate manual-match calculator checkpoint.
+the reviewed November 15 release, bound to its exact manifest hash. It does not
+fetch additional matches or migrate the separate manual-match calculator checkpoint.

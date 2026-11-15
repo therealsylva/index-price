@@ -125,6 +125,12 @@ class ClubIdentityTests(unittest.TestCase):
             (1.0, "fotmob:8232", "SV Elversberg"),
         )
 
+    def test_torreense_debut_never_reuses_torino_identity(self):
+        self.assertEqual(
+            resolve_catalog_club("Torreense", [("torino", "Torino FC")]),
+            (1.0, "fotmob:212820", "Torreense"),
+        )
+
 
 class PlayerIdentityTests(unittest.TestCase):
     def test_tied_surnames_are_held_in_both_candidate_orders(self):
