@@ -28,7 +28,6 @@ The dated update includes source-discovery and preflight audits reconciling
 results, match identities, kickoff times, scores, goal timelines and player
 statistics. Raw provider payloads remain outside this repository.
 
-This correction restores the nine UEFA matches omitted from this PR's window.
 Earlier accepted checkpoints retain their original history; they have not been
 replayed to backfill UEFA main-stage games excluded before 1 November.
 
