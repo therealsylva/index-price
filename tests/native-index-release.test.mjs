@@ -59,12 +59,23 @@ let count=0;
 await assert.rejects(applyRelease({...options,runtime:{marketSnapshot:async({marketId})=>{const m=active.find(x=>x.marketId===marketId);return {...m,status:'RUNNING',referenceTicks:++count>38?'1':m.referenceTicks}}}}),/runtime_band_verification_failed/);
 console.log('PASS: official-feed import precedes queue; 26 contracts applied; exact DB/runtime confirmation; retry no-op; preflight/import/pending/runtime failure guards.');
 
-// The new candidate must apply from the actual November 4 baseline as well.
+// Build the published November 15 baseline before applying the current candidate.
+const previousDate='2026-11-15';
+const previousPath='football/'+previousDate+'/manifest.json';
+const previous={
+ manifest:read(previousPath),
+ manifestHash:createHash('sha256').update(readFileSync(new URL(previousPath,root))).digest('hex'),
+ rows:snapshots(previousDate),
+};
+const previousPlan=planRelease({bundle:previous,markets:updated,...dependencies});
+assert.equal(previousPlan.target.size,38);
+assert.equal(previousPlan.publications.length,33);
+const previousActive=updated.map(m=>previousPlan.publications.find(p=>p.marketId===m.marketId)??m);
 const latest={manifest:read(pointer.manifest),manifestHash:pointer.manifestSha256,rows:snapshots(pointer.publication)};
-let latestActive=structuredClone(updated),latestQueued=0;
+let latestActive=structuredClone(previousActive),latestQueued=0;
 const latestPlan=planRelease({bundle:latest,markets:latestActive,...dependencies});
 assert.equal(latestPlan.target.size,38);assert.ok(latestPlan.publications.length>0);
-const latestClient={rpc:async name=>({data:name==='read_index_price_release'?{manifestText:JSON.stringify(bundle.manifest)}:structuredClone(latestActive),error:null})};
+const latestClient={rpc:async name=>({data:name==='read_index_price_release'?{manifestText:JSON.stringify(previous.manifest)}:structuredClone(latestActive),error:null})};
 const latestRuntime={marketSnapshot:async({marketId})=>({...latestActive.find(m=>m.marketId===marketId),status:'RUNNING'})};
 const latestOptions={bundle:latest,client:latestClient,runtime:latestRuntime,dependencies,publish:async()=>{},queue:async p=>{validatePublication(p);latestQueued++;latestActive=latestActive.map(m=>m.marketId===p.marketId?p:m);}};
 assert.equal((await applyRelease(latestOptions)).changed,latestPlan.publications.length);

@@ -6,20 +6,17 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current proposed publication is **15 November 2026, 00:00 UTC**. It
-advances the November 4 checkpoint using 93 completed eligible matches: 48
-matches in the five domestic leagues, nine Champions League matches, 18 Europa
-League matches and 18 Conference League matches. The batch produces 2,750 new
-movements, 18,463 cumulative movements and 12,405 price rows. It recalculates 159
-unique clubs and 2,231 unique players; 336 unresolved player appearances remain
-held. Torreense's first eligible appearance uses the explicit stable provider
-identity `club:fotmob:212820`, with no inferred Opta identity.
+The current proposed publication is **23 November 2026, 00:00 UTC**. It
+advances the November 15 checkpoint using 45 completed matches played November
+20–22, with nine from each of the five domestic leagues. The batch produces
+1,324 new movements, 19,787 cumulative movements and 12,405 price rows.
+It recalculates 90 clubs and 1,234 players and holds 181 unresolved player
+appearances for identity verification.
 
 The candidate is verified in the repository and awaits review/deployment. The
 source audit checks daily listings against league fixtures and detailed match
-identities, results, goal timelines, lineups and player statistics. International
-matches during the November break are excluded; the latest eligible match in
-this batch was played November 8. Earlier accepted history remains unchanged.
+identities, results, goal timelines, lineups and player statistics. Monday's
+November 23 fixtures fall after the publication cutoff.
 
 The calculator covers the five top domestic leagues and all stages of the
 Champions League, Europa League and Conference League, including qualification.

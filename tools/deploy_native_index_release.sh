@@ -27,8 +27,8 @@ for attempt in {1..12}; do
 const response=await fetch('http://127.0.0.1:3000/v1/indices/catalog?limit=500',{signal:AbortSignal.timeout(15000)});
 if(!response.ok)throw Error('index_catalog_HTTP_'+response.status);
 const catalog=await response.json();
-if(catalog.asOf!=='2026-11-15T00:00:00.000000Z')throw Error('index_catalog_release_not_refreshed');
-console.log('API serves the verified November 15 index release.');
+if(catalog.asOf!=='2026-11-23T00:00:00.000000Z')throw Error('index_catalog_release_not_refreshed');
+console.log('API serves the verified November 23 index release.');
 JS
   then verified=1; break; fi
   sleep 2
