@@ -105,7 +105,7 @@ async function main(){
     module('apps/api/src/trading-runtime-client.js'),
   ]);
   const bundle=loadCurrentPublicPrices(source);
-  if(bundle.manifestHash!=='658b808c3c482dca77589d1ec095e25409d60230885c80bfabe26876c1e99af3'||Date.parse(bundle.manifest.asOf)!==Date.parse('2026-11-15T00:00:00Z')||bundle.manifest.snapshotRows!==12405||bundle.manifest.movementRows!==18463)
+  if(bundle.manifestHash!=='3d8efcae9a6abe61520d676183a30c04c65d59fa4620a7a788e91903a1a0b007'||Date.parse(bundle.manifest.asOf)!==Date.parse('2026-11-23T00:00:00Z')||bundle.manifest.snapshotRows!==12405||bundle.manifest.movementRows!==19787)
     throw Error('unexpected_verified_index_release');
   const ready=await fetch('http://127.0.0.1:3000/ready',{signal:AbortSignal.timeout(10000)});
   const state=await ready.json();
