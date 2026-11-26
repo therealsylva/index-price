@@ -1,0 +1,29 @@
+{
+  "schema": "blackbook.index.update-batch.v1",
+  "from": "2026-11-23T00:00:00.000000Z",
+  "asOf": "2026-11-26T00:00:00.000000Z",
+  "provider": "fotmob",
+  "expectedMatchIds": [
+    "fotmob:5749756",
+    "fotmob:5795517",
+    "fotmob:5868135",
+    "fotmob:6106235",
+    "fotmob:6106243",
+    "fotmob:6106253",
+    "fotmob:6106256",
+    "fotmob:6106259",
+    "fotmob:6106269",
+    "fotmob:6106279",
+    "fotmob:6106294",
+    "fotmob:6106307",
+    "fotmob:6106310",
+    "fotmob:6106317",
+    "fotmob:6106325",
+    "fotmob:6106336",
+    "fotmob:6106339",
+    "fotmob:6106391",
+    "fotmob:6106394",
+    "fotmob:6106412",
+    "fotmob:6106421"
+  ]
+}

@@ -72,6 +72,22 @@ assert.equal(previousPlan.target.size,38);
 assert.equal(previousPlan.publications.length,33);
 const previousActive=updated.map(m=>previousPlan.publications.find(p=>p.marketId===m.marketId)??m);
 const latest={manifest:read(pointer.manifest),manifestHash:pointer.manifestSha256,rows:snapshots(pointer.publication)};
+const priorReleasePath='football/2026-11-23/manifest.json';
+const priorRelease={
+ manifest:read(priorReleasePath),
+ manifestHash:createHash('sha256').update(readFileSync(new URL(priorReleasePath,root))).digest('hex'),
+ rows:snapshots('2026-11-23'),
+};
+const priorReleasePlan=planRelease({bundle:priorRelease,markets:previousActive,...dependencies});
+assert.equal(priorReleasePlan.publications.length,35);
+const priorReleaseActive=previousActive.map(
+ m=>priorReleasePlan.publications.find(p=>p.marketId===m.marketId)??m,
+);
+const incrementalPlan=planRelease({bundle:latest,markets:priorReleaseActive,...dependencies});
+assert.equal(incrementalPlan.target.size,38);
+assert.ok(incrementalPlan.publications.length>0);
+for(const p of incrementalPlan.publications)validatePublication(p);
+console.log('PASS: '+incrementalPlan.publications.length+' changed contracts from November 23; 38 verified targets.');
 let latestActive=structuredClone(previousActive),latestQueued=0;
 const latestPlan=planRelease({bundle:latest,markets:latestActive,...dependencies});
 assert.equal(latestPlan.target.size,38);assert.ok(latestPlan.publications.length>0);

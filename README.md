@@ -6,17 +6,17 @@ This repository owns the repeatable path from a declared batch of completed
 sporting data to the next canonical price publication. A routine update should
 require new data plus a batch manifest—not a new date-specific program.
 
-The current proposed publication is **23 November 2026, 00:00 UTC**. It
-advances the November 15 checkpoint using 45 completed matches played November
-20–22, with nine from each of the five domestic leagues. The batch produces
-1,324 new movements, 19,787 cumulative movements and 12,405 price rows.
-It recalculates 90 clubs and 1,234 players and holds 181 unresolved player
+The current publication is **26 November 2026, 00:00 UTC**. It advances the
+November 23 checkpoint using 21 completed matches played November 23–25:
+three domestic league matches and 18 Champions League matches. The batch
+produces 628 new movements, 20,415 cumulative movements and 12,407 price rows.
+It recalculates 42 clubs and 586 players and holds 63 unresolved player
 appearances for identity verification.
 
-The candidate is verified in the repository and awaits review/deployment. The
-source audit checks daily listings against league fixtures and detailed match
-identities, results, goal timelines, lineups and player statistics. Monday's
-November 23 fixtures fall after the publication cutoff.
+The source audit checks daily listings against league fixtures and detailed
+match identities, results, goal timelines, lineups and player statistics.
+The November 26 Europa League and Conference League fixtures fall after
+this cutoff.
 
 The calculator covers the five top domestic leagues and all stages of the
 Champions League, Europa League and Conference League, including qualification.

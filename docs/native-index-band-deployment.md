@@ -1,11 +1,11 @@
 # Apply the verified index release to the native backend
 
-This operator helper applies the verified November 23, 2026 release (45 new eligible matches; sporting
-coverage through November 22) to the actual native PostgreSQL data and active
+This operator helper applies the verified November 26, 2026 release (21 new eligible matches, with
+sporting coverage through November 25) to the actual native PostgreSQL data and active
 trading contracts. It does not read or import market-history CSVs.
 
 Run the pinned helper from a checkout/archive containing football/current.json
-and football/2026-11-23. The deployed native backend must be available at
+and football/2026-11-26. The deployed native backend must be available at
 /opt/blackbook/index-backend; /etc/blackbook/native.json supplies DATABASE_URL
 and the existing internal API/runtime tokens. No Supabase data key is required.
 
@@ -20,12 +20,12 @@ application can be resumed by rerunning the same pinned release; it must not be
 worked around by deleting state. The maker's separate timeout-progress fix should
 be installed first.
 
-The planner changes 35 of the 38 contracts from the verified November 15 baseline;
-unchanged contracts remain untouched. The existing CSV-pricing adapter clamps
+The planner changes 27 of the 38 contracts from the November 23 release
+and 35 of 38 from the November 15 release. The existing CSV-pricing adapter clamps
 execution marks inside each current band with quote room on both sides. No CSV
 history is imported, regenerated or rewritten by this deployment.
 
-The helper validates the 12,405 price rows and 19,787 movement records before
+The helper validates the 12,407 price rows and 20,415 movement records before
 writing. It plans base and pair bands from the verified snapshot, validates each
 correction with the backend's normal market-publication validator, and checks
 the current runtime version/hash fences for all 38 markets.
@@ -62,5 +62,5 @@ BLACKBOOK_NATIVE_BACKEND_ROOT=/opt/blackbook/index-backend \
 Tests cover exact base/pair bands, version fences, live/newer-source rejection,
 partial/no-op retries, official-feed-before-queue ordering, runtime preflight,
 pending timeout and final matching-engine verification. This helper applies
-the reviewed November 23 release, bound to its exact manifest hash. It does not
+the reviewed November 26 release, bound to its exact manifest hash. It does not
 fetch additional matches or migrate the separate manual-match calculator checkpoint.
