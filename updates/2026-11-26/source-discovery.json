@@ -1,0 +1,1037 @@
+{
+  "schema": "blackbook.index.source-discovery.v1",
+  "sources": [
+    {
+      "url": "https://www.fotmob.com/api/data/matches?date=20261123",
+      "sha256": "925c8fedc9cd241630df5e7649b72be9c2acb857cd25f180d15bbd8e8292d21e",
+      "bytes": 62325
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/matches?date=20261124",
+      "sha256": "f8bab68ab85ed40f3d7fa2c2477570499ce2de02e110b003a56e786dbeb6b621",
+      "bytes": 98967
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/matches?date=20261125",
+      "sha256": "01bf80303669d5ebd3fad3ce3033920be7c9655c464cdc15f44a5e1e9b702f81",
+      "bytes": 86482
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/matches?date=20261126",
+      "sha256": "b84505f6ddaddf39f0a7bff34397a5282368a578fe670c0555b6185e68d7e61b",
+      "bytes": 41296
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=47",
+      "sha256": "267a65e708c36127276045181c47bd196434503ef48988a6ef41e21c5650c317",
+      "bytes": 886850
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=53",
+      "sha256": "844c11c1a16cc26e0fa11ef76978b577721c04588455db6dc6fae833d3ca5a43",
+      "bytes": 726289
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=54",
+      "sha256": "309307cc59e3bb7eaadceef62f7a4a0f0a24e10f27638845b6b20c65a06a7f71",
+      "bytes": 763989
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=55",
+      "sha256": "f6e4ab01f699dd57a81e3c0671558aadcd31a1a101c29a69965324871d60dd8b",
+      "bytes": 832505
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=87",
+      "sha256": "98bed29edf88fc541d8db73139f76a138f9e32b9691244d3dc4baabc49dcd628",
+      "bytes": 872728
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=42",
+      "sha256": "7f9bab3752bb083277137c37f533d7a0710836b3e83a03293eff1e3d2d12faf1",
+      "bytes": 680239
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=73",
+      "sha256": "f9598a2920f1043de1e13203710d34dfabfe569afe2d4ad70552e464d5a2075c",
+      "bytes": 628907
+    },
+    {
+      "url": "https://www.fotmob.com/api/data/leagues?id=10216",
+      "sha256": "9747b6d2de940c980c9d406a3fb0eb65eaec7c4aba21f4b2b4e218fa6b20574a",
+      "bytes": 523637
+    }
+  ],
+  "eligibleMatches": [
+    {
+      "id": 5795517,
+      "leagueId": 47,
+      "time": "23.11.2026 21:00",
+      "home": {
+        "id": 9937,
+        "score": 4,
+        "name": "Brentford"
+      },
+      "away": {
+        "id": 8668,
+        "score": 0,
+        "name": "Everton",
+        "redCards": 1
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "11",
+      "status": {
+        "utcTime": "2026-11-23T20:00:00.000Z",
+        "numberOfAwayRedCards": 1,
+        "halfs": {
+          "firstHalfStarted": "23.11.2026 21:00:19",
+          "secondHalfStarted": "23.11.2026 22:13:02"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "4 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795464000000,
+      "competition": "Premier League",
+      "competitionId": 47
+    },
+    {
+      "id": 5868135,
+      "leagueId": 87,
+      "time": "23.11.2026 21:00",
+      "home": {
+        "id": 8581,
+        "score": 1,
+        "name": "Levante"
+      },
+      "away": {
+        "id": 10268,
+        "score": 1,
+        "name": "Elche"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "13",
+      "status": {
+        "utcTime": "2026-11-23T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "23.11.2026 21:01:37",
+          "secondHalfStarted": "23.11.2026 22:04:11"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "1 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795464000000,
+      "competition": "LaLiga",
+      "competitionId": 87
+    },
+    {
+      "id": 5749756,
+      "leagueId": 55,
+      "time": "23.11.2026 20:45",
+      "home": {
+        "id": 6504,
+        "score": 3,
+        "name": "Monza"
+      },
+      "away": {
+        "id": 8535,
+        "score": 0,
+        "name": "Fiorentina"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "12",
+      "status": {
+        "utcTime": "2026-11-23T19:45:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "23.11.2026 20:46:07",
+          "secondHalfStarted": "23.11.2026 21:50:30"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "3 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795463100000,
+      "competition": "Serie A",
+      "competitionId": 55
+    },
+    {
+      "id": 6106317,
+      "leagueId": 943230,
+      "time": "24.11.2026 18:45",
+      "home": {
+        "id": 8402,
+        "score": 1,
+        "name": "Bod\u00f8/Glimt"
+      },
+      "away": {
+        "id": 9977,
+        "score": 0,
+        "name": "LASK"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T17:45:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 18:46:04",
+          "secondHalfStarted": "24.11.2026 19:46:49"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "1 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795542300000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106339,
+      "leagueId": 943230,
+      "time": "24.11.2026 18:45",
+      "home": {
+        "id": 8637,
+        "score": 1,
+        "name": "Galatasaray"
+      },
+      "away": {
+        "id": 10252,
+        "score": 0,
+        "name": "Aston Villa"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T17:45:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 18:45:38",
+          "secondHalfStarted": "24.11.2026 19:46:42"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "1 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795542300000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106259,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 9825,
+        "score": 1,
+        "name": "Arsenal"
+      },
+      "away": {
+        "id": 9789,
+        "score": 1,
+        "name": "Borussia Dortmund",
+        "shortName": "Dortmund"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:00:33",
+          "secondHalfStarted": "24.11.2026 22:01:05"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "1 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106412,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 10171,
+        "score": 1,
+        "name": "Como"
+      },
+      "away": {
+        "id": 8563,
+        "score": 0,
+        "name": "AEK Athens"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:03:10",
+          "secondHalfStarted": "24.11.2026 22:06:24"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "1 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106307,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 10235,
+        "score": 0,
+        "name": "Feyenoord"
+      },
+      "away": {
+        "id": 9773,
+        "score": 1,
+        "name": "FC Porto"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:01:50",
+          "secondHalfStarted": "24.11.2026 22:05:03"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "0 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106256,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 8456,
+        "score": 2,
+        "name": "Manchester City",
+        "shortName": "Man City"
+      },
+      "away": {
+        "id": 9875,
+        "score": 2,
+        "name": "Napoli"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:01:44",
+          "secondHalfStarted": "24.11.2026 22:02:52"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "2 - 2",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106325,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 178475,
+        "score": 3,
+        "name": "RB Leipzig",
+        "shortName": "RB Leipzig"
+      },
+      "away": {
+        "id": 8588,
+        "score": 1,
+        "name": "Lens"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:00:41",
+          "secondHalfStarted": "24.11.2026 22:01:43"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "3 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106243,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 8633,
+        "score": 5,
+        "name": "Real Madrid"
+      },
+      "away": {
+        "id": 8640,
+        "score": 1,
+        "name": "PSV Eindhoven"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:00:12",
+          "secondHalfStarted": "24.11.2026 22:04:04"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "5 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106394,
+      "leagueId": 943230,
+      "time": "24.11.2026 21:00",
+      "home": {
+        "id": 6019,
+        "score": 0,
+        "name": "Slovan Bratislava"
+      },
+      "away": {
+        "id": 8603,
+        "score": 2,
+        "name": "Real Betis"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-24T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "24.11.2026 21:00:16",
+          "secondHalfStarted": "24.11.2026 22:01:21"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "0 - 2",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795550400000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106421,
+      "leagueId": 943230,
+      "time": "25.11.2026 18:45",
+      "home": {
+        "id": 951893,
+        "score": 1,
+        "name": "Sabah FK"
+      },
+      "away": {
+        "id": 8634,
+        "score": 4,
+        "name": "Barcelona"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T17:45:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 18:45:12",
+          "secondHalfStarted": "25.11.2026 19:47:29"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "1 - 4",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795628700000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106391,
+      "leagueId": 943230,
+      "time": "25.11.2026 18:45",
+      "home": {
+        "id": 7787,
+        "score": 0,
+        "name": "Slavia Prague"
+      },
+      "away": {
+        "id": 10205,
+        "score": 1,
+        "name": "Villarreal"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T17:45:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 18:45:34",
+          "secondHalfStarted": "25.11.2026 19:48:53"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "0 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795628700000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106269,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 9906,
+        "score": 2,
+        "name": "Atl\u00e9tico Madrid"
+      },
+      "away": {
+        "id": 8478,
+        "score": 0,
+        "name": "Viking",
+        "redCards": 1
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "numberOfAwayRedCards": 1,
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:01:05",
+          "secondHalfStarted": "25.11.2026 22:02:53"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "2 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106294,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 8342,
+        "score": 0,
+        "name": "Club Brugge"
+      },
+      "away": {
+        "id": 8650,
+        "score": 3,
+        "name": "Liverpool"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:02:01",
+          "secondHalfStarted": "25.11.2026 22:06:25"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "0 - 3",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106253,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 8636,
+        "score": 2,
+        "name": "Inter"
+      },
+      "away": {
+        "id": 10269,
+        "score": 0,
+        "name": "VfB Stuttgart"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:00:16",
+          "secondHalfStarted": "25.11.2026 22:03:59"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "2 - 0",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106310,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 8639,
+        "score": 2,
+        "name": "Lille"
+      },
+      "away": {
+        "id": 9823,
+        "score": 1,
+        "name": "Bayern M\u00fcnchen",
+        "shortName": "Bayern M\u00fcnchen"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:00:55",
+          "secondHalfStarted": "25.11.2026 22:02:22"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "2 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106235,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 9847,
+        "score": 2,
+        "name": "Paris Saint-Germain",
+        "shortName": "PSG"
+      },
+      "away": {
+        "id": 8686,
+        "score": 2,
+        "name": "Roma"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:01:33",
+          "secondHalfStarted": "25.11.2026 22:04:09"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "2 - 2",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106336,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 9728,
+        "score": 0,
+        "name": "Shakhtar Donetsk"
+      },
+      "away": {
+        "id": 8695,
+        "score": 1,
+        "name": "Fenerbah\u00e7e"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:02:14",
+          "secondHalfStarted": "25.11.2026 22:05:18"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "0 - 1",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    },
+    {
+      "id": 6106279,
+      "leagueId": 943230,
+      "time": "25.11.2026 21:00",
+      "home": {
+        "id": 9768,
+        "score": 2,
+        "name": "Sporting CP"
+      },
+      "away": {
+        "id": 10260,
+        "score": 2,
+        "name": "Manchester United",
+        "redCards": 1,
+        "shortName": "Man United"
+      },
+      "eliminatedTeamId": null,
+      "statusId": 6,
+      "tournamentStage": "5",
+      "status": {
+        "utcTime": "2026-11-25T20:00:00.000Z",
+        "numberOfAwayRedCards": 1,
+        "halfs": {
+          "firstHalfStarted": "25.11.2026 21:00:07",
+          "secondHalfStarted": "25.11.2026 22:03:52"
+        },
+        "periodLength": 45,
+        "finished": true,
+        "started": true,
+        "cancelled": false,
+        "awarded": false,
+        "scoreStr": "2 - 2",
+        "reason": {
+          "short": "FT",
+          "shortKey": "fulltime_short",
+          "long": "Full-Time",
+          "longKey": "finished"
+        }
+      },
+      "timeTS": 1795636800000,
+      "competition": "Champions League",
+      "competitionId": 42
+    }
+  ],
+  "excludedCompetitions": {
+    "Major League Soccer Playoff": 3,
+    "AFC Champions League Elite West": 8,
+    "Azadegan League": 8,
+    "Baller League": 6,
+    "Cyprus League": 1,
+    "Eerste Divisie": 3,
+    "Ekstraklasa": 1,
+    "First League": 3,
+    "First Professional League": 1,
+    "Frauen-Bundesliga": 1,
+    "I Liga": 1,
+    "Liga AUF Uruguaya Clausura": 2,
+    "Liga F": 1,
+    "Liga II": 1,
+    "Liga Nacional - Apertura": 1,
+    "Liga Nacional Apertura": 2,
+    "Ligue 1": 2,
+    "Ligue 2": 2,
+    "Ligue 3": 1,
+    "National League South": 10,
+    "NB II": 1,
+    "Premier League": 14,
+    "Primera Nacional Promotion Playoff": 1,
+    "Prva Liga": 2,
+    "Second Professional League": 3,
+    "Super League": 2,
+    "Super League 2": 2,
+    "Superliga": 1,
+    "Superligaen": 1,
+    "1. Lig": 1,
+    "Allsvenskan": 2,
+    "CAF Confed Cup - 2nd Preliminary Round": 1,
+    "Division Profesional": 2,
+    "HNL": 1,
+    "I League": 5,
+    "LaLiga2": 1,
+    "Liga MX": 1,
+    "Liga Profesional - Clausura - 8th Finals": 3,
+    "Primera Divisi\u00f3n": 2,
+    "Saudi First Division": 9,
+    "S\u00e9rie A": 5,
+    "Serie C - Girone B": 2,
+    "Serie C - Girone A": 1,
+    "S\u00fcper Lig": 1,
+    "WE League": 4,
+    "World Cup U17 - F": 2,
+    "World Cup U17 - H": 2,
+    "World Cup U17 - E": 2,
+    "World Cup U17 - G": 2,
+    "1. CFL": 2,
+    "AFC Champions League Elite East": 8,
+    "Challenge Cup": 8,
+    "Cup": 3,
+    "Erovnuli Liga": 3,
+    "FA Cup": 2,
+    "Isthmian Premier Division": 3,
+    "League Cup": 8,
+    "National League": 12,
+    "National League North": 12,
+    "Northern Premier Division": 1,
+    "Premiership": 2,
+    "Primera Division Apertura": 1,
+    "Cup Grp. D": 2,
+    "Cup Grp. C": 2,
+    "Southern Premier Division Central": 5,
+    "Southern Premier Division South": 5,
+    "USL Super League": 1,
+    "AFC Champions League Two - D": 2,
+    "Championship": 12,
+    "EFL Trophy - Northern Group A": 1,
+    "EFL Trophy - Northern Group E": 1,
+    "EFL Trophy - Southern Group A": 1,
+    "Indian Super League": 1,
+    "League One": 4,
+    "League Two": 2,
+    "Premier Soccer League": 2,
+    "Primera A": 4,
+    "Primera B - Clausura - Final": 1,
+    "Serie B": 10,
+    "Thai League 2": 7,
+    "UEFA Youth League - League Stage": 18,
+    "World Cup U17 - I": 2,
+    "World Cup U17 - K": 2,
+    "World Cup U17 - L": 2,
+    "World Cup U17 - J": 2,
+    "Copa de la Reina": 1,
+    "II Liga": 1,
+    "J. League": 7,
+    "J. League 2": 10,
+    "Cup Grp. B": 1,
+    "Cup Grp. A": 1,
+    "Segunda Division Promotion Playoff": 1,
+    "Segunda Federacion - Group 4": 1,
+    "Segunda Federacion - Group 5": 1,
+    "Segunda Federacion - Group 3": 1,
+    "AFC Champions League Two - E": 2,
+    "AFC Champions League Two - A": 2,
+    "AFC Champions League Two - B": 2,
+    "AFC Champions League Two - C": 2,
+    "EFL Trophy - Northern Group G": 1,
+    "Highland League": 1,
+    "J. League 3": 10,
+    "Second Division": 3,
+    "Serie C - Girone C": 1,
+    "Super Liga": 1,
+    "UEFA Youth League - 3rd Round": 10,
+    "World Cup U17 - B": 2,
+    "World Cup U17 - D": 2,
+    "World Cup U17 - A": 2,
+    "World Cup U17 - C": 2,
+    "Australian Championship": 1,
+    "Primera Division - Apertura": 2,
+    "AFC Champions League Two - G": 1,
+    "AFC Champions League Two - H": 2,
+    "Liga MX - Apertura - Quarter-finals": 2,
+    "Serie A - Championship Round": 1
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "schema": "blackbook.index.source-preflight.v1",
+  "leagueDailyReconciliation": "PASS",
+  "matches": [
+    {
+      "matchId": "fotmob:5749756",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749756",
+        "sha256": "2c23614aa51589f50e39eb710b6bf207aecc5a806954bc3cd9601712caebd38e",
+        "bytes": 277383
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:5795517",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5795517",
+        "sha256": "a4cbb62b49c5ed33c1cf9e7b2076c0a882d99bba73bc069d728b929cba24e2bb",
+        "bytes": 320109
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:5868135",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=5868135",
+        "sha256": "8ecfa81cb5f1ad024e0fdf555255aef3f3fb9a7bf701df876efc313ffb99477f",
+        "bytes": 257265
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106235",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106235",
+        "sha256": "4f5d0ee0e92f05b40b29c1ee42e81b700ef996501b47244017563e255b8d0ef9",
+        "bytes": 286557
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106243",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106243",
+        "sha256": "30aa314ac9a6fdd71016678ddaf69d151d637dce7b66017f27b0c0b53a3ebe51",
+        "bytes": 346927
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106253",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106253",
+        "sha256": "834c5dd55cbe5b65a53976385a473b368cb6808b466b83806f07d496df42e3ac",
+        "bytes": 294418
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106256",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106256",
+        "sha256": "78ce17a07e88e0da2a1899d8570a8dca05bd4ae2db031d916a1b0187842e661b",
+        "bytes": 261058
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106259",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106259",
+        "sha256": "73d7ae33440c0dba06a8abb1fdc809b5ccda1fd3308dfef2375c00ec4ebd85fb",
+        "bytes": 316995
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106269",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106269",
+        "sha256": "55eeed72f89e385c37d2243c9f707097cd85afb9112cca1c416f2e0c7677278a",
+        "bytes": 283077
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106279",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106279",
+        "sha256": "ef659598559c56cb826d6792d3d05d165912bd48411787ddcc0ca29eec97094f",
+        "bytes": 252638
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106294",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106294",
+        "sha256": "be7e141be464cf3ae0c412e69e6b36c911789d36b17f5f8a0ce2d0439071ac61",
+        "bytes": 286287
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106307",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106307",
+        "sha256": "99d52e481c07c4f9645f2fc721840235712e2bd703076d7ea894b0700d8021bb",
+        "bytes": 271510
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106310",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106310",
+        "sha256": "adbee397fc874d3d376dd7e7adaa3e9eb0fa62a9fd6b09cfe95f4b370252d404",
+        "bytes": 277502
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106317",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106317",
+        "sha256": "c03b8d2ca552fc08398f56c7684bbb6e2896fcaaf6474b170fd0ed20bd136c72",
+        "bytes": 250197
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106325",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106325",
+        "sha256": "c5d896db09dc89b8b15505f4fae4b8a86050297d4bcd12b77a1604ef03c86a53",
+        "bytes": 304833
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106336",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106336",
+        "sha256": "24a186273f2877c2da29dfd7bf0ec6dfee37f7b44d5205e68b7ea700bd3e99ee",
+        "bytes": 230202
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106339",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106339",
+        "sha256": "9d488bd553e46758c17738e121549371d9da24d6f6ad73ac14137b807c2f1bb4",
+        "bytes": 263216
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106391",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106391",
+        "sha256": "d8676923d19f3f834afd4264dc8096deed4f992baf72d65d14f60dbd12f88604",
+        "bytes": 237681
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106394",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106394",
+        "sha256": "708c3b355fc7dec9d864448383db422811e54cebbf599b4932ffb44bbac2fc02",
+        "bytes": 304134
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106412",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106412",
+        "sha256": "17e3f697fdebdabb753845adf95a83c2f04efb44da34968620380e2a9e6fe74b",
+        "bytes": 298134
+      },
+      "identityResultKickoffReconciled": true
+    },
+    {
+      "matchId": "fotmob:6106421",
+      "source": {
+        "url": "https://www.fotmob.com/api/data/matchDetails?matchId=6106421",
+        "sha256": "9db104e299ec27d555f9a9c852ba709bff5a149639c1f633046494bf272e479f",
+        "bytes": 298691
+      },
+      "identityResultKickoffReconciled": true
+    }
+  ],
+  "extendedContentReconciliation": "PASS",
+  "extendedContentChecks": [
+    {
+      "matchId": "fotmob:5749756",
+      "competition": "Serie A",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 3
+    },
+    {
+      "matchId": "fotmob:5795517",
+      "competition": "Premier League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 4
+    },
+    {
+      "matchId": "fotmob:5868135",
+      "competition": "LaLiga",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 2
+    },
+    {
+      "matchId": "fotmob:6106235",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 4
+    },
+    {
+      "matchId": "fotmob:6106243",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 6
+    },
+    {
+      "matchId": "fotmob:6106253",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 2
+    },
+    {
+      "matchId": "fotmob:6106256",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 26,
+      "goalEvents": 4
+    },
+    {
+      "matchId": "fotmob:6106259",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 30,
+      "goalEvents": 2
+    },
+    {
+      "matchId": "fotmob:6106269",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 2
+    },
+    {
+      "matchId": "fotmob:6106279",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 4
+    },
+    {
+      "matchId": "fotmob:6106294",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3
+    },
+    {
+      "matchId": "fotmob:6106307",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 1
+    },
+    {
+      "matchId": "fotmob:6106310",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 3
+    },
+    {
+      "matchId": "fotmob:6106317",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 1
+    },
+    {
+      "matchId": "fotmob:6106325",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 4
+    },
+    {
+      "matchId": "fotmob:6106336",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 29,
+      "goalEvents": 1
+    },
+    {
+      "matchId": "fotmob:6106339",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 1
+    },
+    {
+      "matchId": "fotmob:6106391",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 29,
+      "goalEvents": 1
+    },
+    {
+      "matchId": "fotmob:6106394",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 2
+    },
+    {
+      "matchId": "fotmob:6106412",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 31,
+      "goalEvents": 1
+    },
+    {
+      "matchId": "fotmob:6106421",
+      "competition": "Champions League",
+      "status": "PASS",
+      "activePlayers": 32,
+      "goalEvents": 5
+    }
+  ]
+}
